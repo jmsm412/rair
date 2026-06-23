@@ -1,0 +1,151 @@
+version: '3.8'
+
+services:
+  core-api:
+    container_name: core-api
+    build:
+      context: ./core-api
+      dockerfile: Dockerfile
+    volumes:
+      - ./core-api/db:/usr/src/core-api/db
+      - ./core-api/bin/Videos:/usr/src/core-api/bin/Videos
+    environment:
+      PRODUCTION: "false"
+      MONGO_URI: mongodb://${LOCAL_DB_USER}:${LOCAL_DB_PASS}@mongo:27017/rair-db?authSource=${LOCAL_DB_USER}
+      MONGO_URI_LOCAL: mongodb://${LOCAL_DB_USER}:${LOCAL_DB_PASS}@mongo:27017/rair-db?authSource=${LOCAL_DB_USER}
+      MONGO_DB_HOSTNAME: mongo
+      MONGO_DB_NAME: ${MONGO_DB_NAME}
+      JWT_SECRET: ${JWT_SECRET}
+      PINATA_KEY: ${PINATA_KEY}
+      PINATA_SECRET: ${PINATA_SECRET}
+      PINATA_GATEWAY: ${PINATA_GATEWAY}
+      ADMIN_NETWORK: ${ADMIN_NFT_CHAIN}
+      ADMIN_CONTRACT: ${ADMIN_CONTRACT}
+      SERVICE_HOST: ${HOSTNAME}
+      DEFAULT_PRODUCT_COVER: ${DEFAULT_PRODUCT_COVER}
+      IPFS_SERVICE: ${IPFS_SERVICE}
+      IPFS_GATEWAY: ${IPFS_GATEWAY}
+      IPFS_API: ${IPFS_API}
+      MONGO_LOG_COLLECTION: ${MONGO_LOG_COLLECTION}
+      LOG_LEVEL: ${LOG_LEVEL}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      SESSION_SECRET: ${SESSION_SECRET}
+      SESSION_TTL: ${SESSION_TTL}
+      ALCHEMY_API_KEY: ${ALCHEMY_API_KEY}
+      WITHDRAWER_PRIVATE_KEY: ${WITHDRAWER_PRIVATE_KEY}
+      APP_NAME: ${APP_NAME}
+      RATE_LIMIT_MINUTE: ${RATE_LIMIT_MINUTE}
+    ports:
+      - 3000:3000
+      - 5000:5000
+    depends_on:
+      - redis
+      - mongo
+    networks:
+      - local-network
+
+  event-worker:
+    container_name: event-worker
+    build:
+      context: ./event-worker
+      dockerfile: Dockerfile
+    environment:
+      PRODUCTION: "false"
+      MONGO_URI_LOCAL: mongodb://${LOCAL_DB_USER}:${LOCAL_DB_PASS}@mongo:27017/rair-db?authSource=${LOCAL_DB_USER}
+      MONGO_DB_HOSTNAME: mongo
+      MONGO_DB_NAME: ${MONGO_DB_NAME}
+      PINATA_KEY: ${PINATA_KEY}
+      PINATA_SECRET: ${PINATA_SECRET}
+      PINATA_GATEWAY: ${PINATA_GATEWAY}
+      DEFAULT_PRODUCT_COVER: ${DEFAULT_PRODUCT_COVER}
+      SYNC_CONTRACT_REPEAT_EVERY: ${SYNC_CONTRACT_REPEAT_EVERY}
+      SYNC_CONTRACT_TASK_INTERVAL: ${SYNC_CONTRACT_TASK_INTERVAL}
+      IPFS_SERVICE: ${IPFS_SERVICE}
+      IPFS_GATEWAY: ${IPFS_GATEWAY}
+      IPFS_API: ${IPFS_API}
+      MONGO_LOG_COLLECTION: ${MONGO_LOG_COLLECTION}
+      LOG_LEVEL: ${LOG_LEVEL}
+      BASE_RAIRNODE_URL: http://core-api:5000
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      ALCHEMY_API_KEY: ${ALCHEMY_API_KEY}
+    ports:
+      - 5001:5001
+    depends_on:
+      - core-api
+      - mongo
+    networks:
+      - local-network
+
+  media-transcoder:
+    container_name: media-transcoder
+    build:
+      context: ./media-transcoder
+      dockerfile: Dockerfile
+    environment:
+      PRODUCTION: "false"
+      MEDIA_SERVICE_PORT: ${MEDIA_SERVICE_PORT}
+      BASE_RAIRNODE_URL: http://core-api:5000
+      PINATA_KEY: ${PINATA_KEY}
+      PINATA_SECRET: ${PINATA_SECRET}
+      PINATA_GATEWAY: ${PINATA_GATEWAY}
+      IPFS_SERVICE: ${IPFS_SERVICE}
+      IPFS_GATEWAY: ${IPFS_GATEWAY}
+      IPFS_API: ${IPFS_API}
+      MONGO_LOG_COLLECTION: ${MONGO_LOG_COLLECTION}
+      LOG_LEVEL: ${LOG_LEVEL}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    ports:
+      - 5002:5002
+    depends_on:
+      - redis
+    networks:
+      - local-network
+
+  redis:
+    container_name: redis
+    image: redis:alpine
+    restart: always
+    ports:
+      - 6379:6379
+    networks:
+      - local-network
+
+  client:
+    container_name: client
+    build:
+      context: ./client
+      dockerfile: Dockerfile.prod
+    environment:
+      VITE_HOME_PAGE: /
+      VITE_MATIC_MAIN_DIAMOND_FACTORY: ${MATIC_MAINNET_DIAMOND_FACTORY_ADDRESS}
+      VITE_MATIC_MAIN_DIAMOND_MARKETPLACE: ${MATIC_MAINNET_DIAMOND_MARKETPLACE_ADDRESS}
+      VITE_NODE_SOCKET_URI: ${FRONT_SOCKET_URI}
+    ports:
+      - 8088:80
+    networks:
+      - local-network
+    depends_on:
+      - core-api
+
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    restart: always
+    volumes:
+      - ./core-api/dev/db-data:/data/db
+      - ./core-api/dev/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${LOCAL_DB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${LOCAL_DB_PASS}
+      MONGO_INITDB_DATABASE: rair-db
+    ports:
+      - 27017:27017
+    networks:
+      - local-network
+
+networks:
+  local-network:
+    driver: bridge

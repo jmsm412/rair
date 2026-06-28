@@ -24,8 +24,26 @@ The codebase is partitioned into four distinct operational containers communicat
    │  media-      │              │ Alchemy / EVM│
    │  transcoder  │              │ Blockchain   │
    └──────────────┘              └──────────────┘
-
 ```
+
+### Core Services
+
+* **`client`**: A high-performance single-page application built on React, TypeScript, and Vite. It serves the interface, handles user wallet connectivity, captures cryptographic signatures for authentication, and embeds the customized video player.
+* **`core-api`**: The central application hub powered by Node.js and Express. It manages persistent business logic via MongoDB, coordinates session handling with Redis, validates user wallet signatures, and enforces permission gates before unlocking secure media metadata.
+* **`media-transcoder`**: A microservice dedicated to asset security. It intercepts raw media uploads and leverages Fluent-FFmpeg to slice and transcode files into encrypted HTTP Live Streaming (`.m3u8` / HLS) video fragments, binding stream decryption to contract authorization hooks.
+* **`event-worker`**: An event-driven background listener. Using the Agenda framework, it maintains an active RPC sync interface with the EVM blockchain through the Alchemy SDK. It aggregates contract transfer/mint events to natively maintain the synchronization state of the local database without relying on third-party indexers.
+
+### Smart Contract Build Integration (Multi-Service ABI Sync Dispatcher)
+
+To bridge the Web3 contract layer with the application stack, the compilation lifecycle uses a post-build automation routine (`aggregateAbis.js`). 
+
+The script isolates individual EIP-2535 diamond facet configurations, extracts function signatures, deduplicates overlapping selector parameters, and compiles them into a single, cohesive `DiamondCombined.json` interface artifact. 
+
+Once generated, the sync engine automatically dispatches this compiled artifact directly into the assets directories of dependent microservices:
+* **`client`**: Extracted into `client/src/abis/DiamondCombined.json` to handle live frontend wallet contract interaction wrappers.
+* **`event-worker`**: Extracted into `event-worker/src/abis/DiamondCombined.json` to align the event indexing engine with current selector mappings.
+
+This provides an automated single source of truth across all tiers whenever smart contract interfaces are updated.
 
 ### Core Services
 

@@ -14,6 +14,15 @@ docker-compose -f docker-compose.local-new.yml up -d mongo redis
 
 ```
 
+### 1.3 Containerized Local EVM Development Network
+
+For end-to-end local testing, the Docker Compose orchestration network includes a self-contained local EVM blockchain emulation instance running via Anvil.
+
+* **JSON-RPC Endpoint Address:** `http://127.0.0.1:8545`
+* **Internal Network Hostname:** `http://evm-node:8545`
+
+This node starts completely blank and responds immediately to execution requests on port 8545. You can connect local browser wallets or configure deployment tools directly to this boundary endpoint without consuming remote network resources or public testnet gas.
+
 ---
 
 ## 2. Global Environment Variables (`.env`)
@@ -77,16 +86,39 @@ npm run dev   # Or node bin/index.js depending on your package scripts
 
 The API engine will initialize and mount a listener loop on `http://localhost:5000`.
 
-### 3.2 Booting the Blockchain Indexer Loop
+### 3.2 EVM Compilation Size Boundaries (Hardhat 3)
+
+To prevent facet compilation size errors and ensure all diamond facets compile within the strict 24KB EVM contract limit, the Solidity optimizer is explicitly configured inside `hardhat.config.js`. 
+
+Whenever adding new facets or upgrading dependencies, verify compilation sizing remains compliant by executing the build pipeline:
 
 ```bash
-cd event-worker
-npm install
-npm run start
+npm run build
 
 ```
 
-The event scheduler worker will establish connectivity with your Redis cache, pair with your custom Alchemy RPC endpoint, and wait for event signatures.
+**Required Configuration Standard:**
+
+* **Optimizer Status:** Enabled
+* **Optimizer Runs:** 200
+* **Target Environment:** Hardhat 3 (EDR Runtime)
+
+### 3.2.1 Diamond Proxy Cuts and Initialization Sequences
+
+The deployment environment utilizes a centralized master runner script (`01_deploy_all.js`) built to handle the EIP-2535 initialization pipeline sequentially. 
+
+Rather than treating facets as decoupled endpoints, the orchestrator reflects individual ABI configurations using Ethers v6 to parse method selectors and dynamically register them via the proxy's `diamondCut` entrypoint.
+
+**Deployment Execution Steps:**
+1. Configure targeted execution options by editing the Boolean feature flags inside the `DEPLOY_FLAGS` configuration object.
+2. Execute the local setup sequence or deploy to a specific live network block:
+```bash
+npx hardhat deploy --network hardhat
+
+```
+
+3. The orchestration process returns active address traces upon a successful build confirming that proxy linkages and cuts have been successfully submitted to the ledger.
+
 
 ### 3.3 Booting the Web Client
 

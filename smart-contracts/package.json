@@ -1,24 +1,20 @@
 {
-  "dependencies": {
-    "@nomicfoundation/hardhat-network-helpers": "^1.0.11",
-    "@nomicfoundation/hardhat-verify": "^2.0.10",
-    "@nomiclabs/hardhat-ethers": "^2.2.3",
-    "@nomiclabs/hardhat-waffle": "^2.0.2",
-    "@openzeppelin/contracts": "^5.0.2",
-    "chai": "^4.5.0",
-    "dotenv": "^16.0.2",
-    "ethers": "^5.7.0",
-    "hardhat": "^2.22.18",
-    "hardhat-contract-sizer": "^2.6.1",
-    "hardhat-deploy": "^0.12.4",
-    "hardhat-gas-reporter": "^2.2.1"
-  },
   "name": "diamond-smart-contracts",
   "version": "1.0.0",
   "description": "RAIR Smart Contracts v2",
   "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox-mocha-ethers": "^3.0.7",
+    "@openzeppelin/contracts": "^5.0.2",
+    "dotenv": "^17.4.2",
+    "hardhat": "^3.9.0",
+    "@solidstate/hardhat-contract-sizer": "^3.0.0",
+    "hardhat-deploy": "^2.0.8"
+  },
   "scripts": {
-    "compile": "npx hardhat compile",
+    "build": "npx hardhat build && node scripts/aggregateAbis.js",
+    "compile": "npx hardhat build && node scripts/aggregateAbis.js",
     "test": "npx hardhat test",
     "deploy-sepolia": "npx hardhat --network 0xaa36a7 deploy",
     "deploy-amoy": "npx hardhat --network 0x13882 deploy",

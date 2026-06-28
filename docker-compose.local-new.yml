@@ -146,6 +146,15 @@ services:
     networks:
       - local-network
 
+  evm-node:
+    container_name: evm-node
+    image: ghcr.io/foundry-rs/foundry:latest
+    ports:
+      - 8545:8545
+    command: anvil --host 0.0.0.0
+    networks:
+      - local-network
+
 networks:
   local-network:
     driver: bridge

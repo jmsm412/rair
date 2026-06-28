@@ -20,3 +20,16 @@ rair.code-workspace
 .env
 .env.*
 *.env
+
+smart-contracts/node_modules/
+smart-contracts/artifacts/
+smart-contracts/cache/
+smart-contracts/typechain/
+smart-contracts/typechain-types/
+smart-contracts/coverage/
+smart-contracts/coverage.json
+smart-contracts/.env
+smart-contracts/deployments/hardhat/
+smart-contracts/deployments/localhost/
+smart-contracts/generated/
+smart-contracts/types/

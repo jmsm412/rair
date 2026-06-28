@@ -1,0 +1,1735 @@
+.
+├── LICENSE
+├── README.md
+├── client
+│   ├── Dockerfile
+│   ├── README.md
+│   ├── commands
+│   │   └── run_tsc.sh
+│   ├── docker-defaults.sh
+│   ├── index.html
+│   ├── package.json
+│   ├── public
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   ├── src
+│   │   ├── App.css
+│   │   ├── App.tsx
+│   │   ├── axios.responseTypes.ts
+│   │   ├── components
+│   │   │   ├── AboutPage
+│   │   │   │   ├── AboutPageNew
+│   │   │   │   │   ├── AboutPageNew.css
+│   │   │   │   │   ├── AboutPageNew.tsx
+│   │   │   │   │   ├── CompareAbout
+│   │   │   │   │   │   ├── CompareAbout.tsx
+│   │   │   │   │   │   └── CompareMobileSelect
+│   │   │   │   │   │       └── CompareMobileSelect.tsx
+│   │   │   │   │   ├── ExclusiveNfts
+│   │   │   │   │   │   ├── ExclusiveNfts.tsx
+│   │   │   │   │   │   ├── MainSelectNft.jsx
+│   │   │   │   │   │   └── MobileCarouselNfts.tsx
+│   │   │   │   │   ├── LeftTokenAbout
+│   │   │   │   │   │   └── LeftTokenAbout.tsx
+│   │   │   │   │   ├── MainBlock
+│   │   │   │   │   │   └── MainBlock.tsx
+│   │   │   │   │   ├── PlatformAbout
+│   │   │   │   │   │   ├── PlatformAbout.module.css
+│   │   │   │   │   │   └── PlatformAbout.tsx
+│   │   │   │   │   ├── RairOffer
+│   │   │   │   │   │   └── RairOffer.tsx
+│   │   │   │   │   ├── RoadMapAbout
+│   │   │   │   │   │   └── RoadMapAbout.tsx
+│   │   │   │   │   ├── StreamsAbout
+│   │   │   │   │   │   └── StreamsAbout.tsx
+│   │   │   │   │   ├── Tokenomics
+│   │   │   │   │   │   └── Tokenomics.tsx
+│   │   │   │   │   └── aboutPage.types.ts
+│   │   │   │   └── assets
+│   │   │   │       ├── David.webp
+│   │   │   │       ├── Ed.webp
+│   │   │   │       ├── GARRETT.webp
+│   │   │   │       ├── Gunther.webp
+│   │   │   │       ├── JULIA.webp
+│   │   │   │       ├── MICHAEL.webp
+│   │   │   │       ├── Martin.webp
+│   │   │   │       ├── Matthew.webp
+│   │   │   │       ├── Seth.webp
+│   │   │   │       ├── about.ts
+│   │   │   │       ├── aboutPage_bg-1.webp
+│   │   │   │       ├── carston-hs.webp
+│   │   │   │       ├── exclusiveNfts
+│   │   │   │       │   ├── coin-agenda_1.webp
+│   │   │   │       │   ├── coin-agenda_2.webp
+│   │   │   │       │   ├── exclusiveNfts.ts
+│   │   │   │       │   ├── grayman-matrix.webp
+│   │   │   │       │   ├── monster.webp
+│   │   │   │       │   └── nutcracher-nft-photo.webp
+│   │   │   │       ├── rair-prod.webp
+│   │   │   │       └── tokenomics
+│   │   │   │           ├── arb-icon.webp
+│   │   │   │           ├── binance-icon.webp
+│   │   │   │           ├── eth-icon.webp
+│   │   │   │           ├── kat-icon.webp
+│   │   │   │           ├── matic-icon.webp
+│   │   │   │           ├── space-icon.webp
+│   │   │   │           ├── tokenomics.ts
+│   │   │   │           └── triple-icon.webp
+│   │   │   ├── Accordion
+│   │   │   │   ├── Accordion.tsx
+│   │   │   │   ├── AccordionItem
+│   │   │   │   │   ├── AccordionItem.tsx
+│   │   │   │   │   └── index.ts
+│   │   │   │   ├── index.ts
+│   │   │   │   └── styles.css
+│   │   │   ├── AlertMetamask
+│   │   │   │   ├── alertMetamask.types.ts
+│   │   │   │   ├── index.tsx
+│   │   │   │   └── styles.tsx
+│   │   │   ├── ConsumerMode
+│   │   │   │   ├── BatchMinting.tsx
+│   │   │   │   ├── DiamondMarketplace.tsx
+│   │   │   │   └── consumerMode.types.ts
+│   │   │   ├── DemoMediaUpload
+│   │   │   │   ├── DemoMediaUpload.css
+│   │   │   │   ├── DemoMediaUpload.tsx
+│   │   │   │   ├── LinearProgressWithLabel
+│   │   │   │   │   └── LinearProgressWithLabel.tsx
+│   │   │   │   ├── MediaItemChange
+│   │   │   │   │   ├── MediaItem.styled.tsx
+│   │   │   │   │   ├── MediaItemChange.css
+│   │   │   │   │   └── MediaItemChange.tsx
+│   │   │   │   ├── MediaListBox
+│   │   │   │   │   └── MediaListBox.tsx
+│   │   │   │   ├── PopUpChangeVideo
+│   │   │   │   │   ├── PopUpChangeVideo.tsx
+│   │   │   │   │   └── PopUpChangeVideoStyled.tsx
+│   │   │   │   ├── PopUpChoiceNFT
+│   │   │   │   │   └── PopUpChoiceNFT.tsx
+│   │   │   │   ├── UploadedListBox
+│   │   │   │   │   ├── AnalyticsPopUp
+│   │   │   │   │   │   ├── AnalyticsPopUp.css
+│   │   │   │   │   │   └── AnalyticsPopUp.tsx
+│   │   │   │   │   └── UploadedListBox.tsx
+│   │   │   │   ├── icons
+│   │   │   │   │   └── TrashIcon.tsx
+│   │   │   │   └── types
+│   │   │   │       └── DemoMediaUpload.types.ts
+│   │   │   ├── Dropdown
+│   │   │   │   ├── Dropdown.tsx
+│   │   │   │   ├── index.ts
+│   │   │   │   └── styles.css
+│   │   │   ├── Footer
+│   │   │   │   ├── Footer.tsx
+│   │   │   │   ├── FooterItems
+│   │   │   │   │   └── FooterItems.tsx
+│   │   │   │   └── footer.types.ts
+│   │   │   ├── FrontPage
+│   │   │   │   └── WelcomeHeader.tsx
+│   │   │   ├── GlobalModal
+│   │   │   │   ├── FilterModal
+│   │   │   │   │   ├── FilterModal.tsx
+│   │   │   │   │   ├── FilterModalIcons.tsx
+│   │   │   │   │   ├── HomePAgeModal.tsx
+│   │   │   │   │   ├── MobileHeaderBlock.tsx
+│   │   │   │   │   ├── index.ts
+│   │   │   │   │   └── styles.css
+│   │   │   │   ├── GlobalModal.tsx
+│   │   │   │   ├── helpers
+│   │   │   │   │   └── OnOpenModal.tsx
+│   │   │   │   └── index.ts
+│   │   │   ├── GroupLogos
+│   │   │   │   ├── MainLogo.tsx
+│   │   │   │   ├── MainLogoItems.tsx
+│   │   │   │   └── mainLogo.types.ts
+│   │   │   ├── Header
+│   │   │   │   ├── AdminPanel
+│   │   │   │   │   └── AdminPanel.tsx
+│   │   │   │   ├── Header.css
+│   │   │   │   ├── HeaderItems
+│   │   │   │   │   ├── HeaderItems.tsx
+│   │   │   │   │   └── TalkToSalesComponent
+│   │   │   │   │       ├── TalkSalesButton.tsx
+│   │   │   │   │       └── TalkSalesComponent.tsx
+│   │   │   │   ├── MainHeader.tsx
+│   │   │   │   └── header.types.ts
+│   │   │   ├── InquiriesPage
+│   │   │   │   ├── InquiriesItems.tsx
+│   │   │   │   ├── InquiriesPage.css
+│   │   │   │   └── InquiriesPage.tsx
+│   │   │   ├── MainPage
+│   │   │   │   ├── AboutUsTeam
+│   │   │   │   │   └── index.tsx
+│   │   │   │   ├── MainPage.module.css
+│   │   │   │   ├── MainPage.tsx
+│   │   │   │   ├── MainPage_ConflictingGlobalStyles.css
+│   │   │   │   ├── components
+│   │   │   │   │   ├── LogoCarousel.module.css
+│   │   │   │   │   └── LogoCarousel.tsx
+│   │   │   │   ├── hooks
+│   │   │   │   │   └── getProductsHookGeneral.ts
+│   │   │   │   └── types
+│   │   │   │       ├── logocarousel.types.ts
+│   │   │   │       └── mainpage.types.ts
+│   │   │   ├── MockUpPage
+│   │   │   │   ├── FilteringBlock
+│   │   │   │   │   ├── FilteringBlock.css
+│   │   │   │   │   ├── FilteringBlock.tsx
+│   │   │   │   │   ├── FilteringBlockItems
+│   │   │   │   │   │   ├── FilteringBlockItems.tsx
+│   │   │   │   │   │   └── incons.tsx
+│   │   │   │   │   ├── Vector.png
+│   │   │   │   │   ├── filteringBlock.types.ts
+│   │   │   │   │   ├── hooks
+│   │   │   │   │   │   └── index.tsx
+│   │   │   │   │   ├── modal
+│   │   │   │   │   │   └── index.tsx
+│   │   │   │   │   └── portal
+│   │   │   │   │       ├── BlockMinMax
+│   │   │   │   │       │   └── BlockMinMax.tsx
+│   │   │   │   │       ├── ModalBlockchain
+│   │   │   │   │       │   └── ModalBlockchain.tsx
+│   │   │   │   │       ├── ModalCategories
+│   │   │   │   │       │   └── ModalCategories.tsx
+│   │   │   │   │       ├── ModalItem
+│   │   │   │   │       │   ├── ModalItem.tsx
+│   │   │   │   │       │   └── ModalItemResponsive.css
+│   │   │   │   │       └── index.ts
+│   │   │   │   ├── GeneralCollectionStyles.css
+│   │   │   │   ├── ImageLazy
+│   │   │   │   │   ├── ImageLazy.tsx
+│   │   │   │   │   ├── ImageLazyItem
+│   │   │   │   │   │   └── ImageLazy.styled.tsx
+│   │   │   │   │   └── types
+│   │   │   │   │       └── imageLazy.types.ts
+│   │   │   │   ├── MainBanner
+│   │   │   │   │   └── MainBanner.tsx
+│   │   │   │   ├── MockUpPage.tsx
+│   │   │   │   ├── NftList
+│   │   │   │   │   ├── Breadcrumbs
+│   │   │   │   │   │   ├── Breadcrumbs.css
+│   │   │   │   │   │   └── Breadcrumbs.tsx
+│   │   │   │   │   ├── LikeButton
+│   │   │   │   │   │   ├── LikeButton.css
+│   │   │   │   │   │   ├── LikeButton.tsx
+│   │   │   │   │   │   └── favoritesReducer
+│   │   │   │   │   │       ├── actionTypes
+│   │   │   │   │   │       │   └── types.ts
+│   │   │   │   │   │       ├── actions
+│   │   │   │   │   │       │   └── actionFavorites.ts
+│   │   │   │   │   │       ├── favorites.types.ts
+│   │   │   │   │   │       └── favoritesReducers.ts
+│   │   │   │   │   ├── NftData
+│   │   │   │   │   │   ├── AuthenticityBlock
+│   │   │   │   │   │   │   ├── AuthenticityBlock.css
+│   │   │   │   │   │   │   ├── AuthenticityBlock.tsx
+│   │   │   │   │   │   │   └── AuthenticityBlockItems.tsx
+│   │   │   │   │   │   ├── BuySellButton.tsx
+│   │   │   │   │   │   ├── CollectionInfo
+│   │   │   │   │   │   │   ├── CollectionInfo.css
+│   │   │   │   │   │   │   ├── CollectionInfo.tsx
+│   │   │   │   │   │   │   └── CollectionInfoItems.tsx
+│   │   │   │   │   │   ├── CustomShareButton.tsx
+│   │   │   │   │   │   ├── EtherscanIconComponent.tsx
+│   │   │   │   │   │   ├── NftCollectionPage.tsx
+│   │   │   │   │   │   ├── NftDataCommonLink.tsx
+│   │   │   │   │   │   ├── NftDataExternalLink.tsx
+│   │   │   │   │   │   ├── NftDataPageMain.tsx
+│   │   │   │   │   │   ├── NftListUnlockablesVideos.tsx
+│   │   │   │   │   │   ├── NftSingleUnlockables.css
+│   │   │   │   │   │   ├── NftSingleUnlockables.tsx
+│   │   │   │   │   │   ├── NftUnlockablesPage.tsx
+│   │   │   │   │   │   ├── NftVideoplayer
+│   │   │   │   │   │   │   ├── NewVideo.tsx
+│   │   │   │   │   │   │   └── NftVideoplayer.tsx
+│   │   │   │   │   │   ├── SellButton.tsx
+│   │   │   │   │   │   ├── SellInputButton.tsx
+│   │   │   │   │   │   ├── SerialNumberBuySell.tsx
+│   │   │   │   │   │   ├── SingleTokenViewProperties.tsx
+│   │   │   │   │   │   ├── TitleCollection
+│   │   │   │   │   │   │   ├── FilterMetadataTokens
+│   │   │   │   │   │   │   │   ├── ClearMetadataBox
+│   │   │   │   │   │   │   │   │   ├── ClearMetadataBox.tsx
+│   │   │   │   │   │   │   │   │   └── ClearMetadataItem.tsx
+│   │   │   │   │   │   │   │   ├── FilterMetadataTokens.tsx
+│   │   │   │   │   │   │   │   ├── MetadataAttrPropertyItems
+│   │   │   │   │   │   │   │   │   ├── MetadataAttributes.tsx
+│   │   │   │   │   │   │   │   │   └── MetadataAttributesPropertyItem.tsx
+│   │   │   │   │   │   │   │   └── MetadataItem.tsx
+│   │   │   │   │   │   │   ├── MintPopUpCollection
+│   │   │   │   │   │   │   │   ├── MintPopUpCollection.tsx
+│   │   │   │   │   │   │   │   └── StyledMintPopUpCollection.ts
+│   │   │   │   │   │   │   ├── SharePopUp
+│   │   │   │   │   │   │   │   ├── SharePopUp.css
+│   │   │   │   │   │   │   │   └── SharePopUp.tsx
+│   │   │   │   │   │   │   ├── TitleCollection.css
+│   │   │   │   │   │   │   └── TitleCollection.tsx
+│   │   │   │   │   │   ├── TitleSingleTokenView.tsx
+│   │   │   │   │   │   ├── UnlockableVideosSingleTokenPage.tsx
+│   │   │   │   │   │   └── UnlockablesPage
+│   │   │   │   │   │       ├── NftDifferentRarity
+│   │   │   │   │   │       │   ├── NftDifferentRarity.module.css
+│   │   │   │   │   │       │   └── NftDifferentRarity.tsx
+│   │   │   │   │   │       ├── VideoPlayerView.module.css
+│   │   │   │   │   │       └── VideoPlayerView.tsx
+│   │   │   │   │   ├── NftItem.tsx
+│   │   │   │   │   ├── NftItemForCollectionView.tsx
+│   │   │   │   │   ├── NftList.tsx
+│   │   │   │   │   ├── OfferItem.tsx
+│   │   │   │   │   ├── SvgKey.tsx
+│   │   │   │   │   ├── SvgKeyForModalItem.tsx
+│   │   │   │   │   ├── SvgLock.tsx
+│   │   │   │   │   ├── nftList.types.ts
+│   │   │   │   │   └── utils
+│   │   │   │   │       ├── changeIPFSLink.ts
+│   │   │   │   │       └── gettingPrice.tsx
+│   │   │   │   ├── PaginationBox
+│   │   │   │   │   ├── PaginationBox.tsx
+│   │   │   │   │   └── PaginationBoxStyled.tsx
+│   │   │   │   ├── SearchPanel.tsx
+│   │   │   │   ├── SelectBox
+│   │   │   │   │   ├── ItemRank.tsx
+│   │   │   │   │   ├── ItemRankItems.tsx
+│   │   │   │   │   ├── SelectBox.tsx
+│   │   │   │   │   ├── SelectNumber
+│   │   │   │   │   │   ├── SelectNumber.css
+│   │   │   │   │   │   └── SelectNumber.tsx
+│   │   │   │   │   ├── selectBox.types.ts
+│   │   │   │   │   └── styles.css
+│   │   │   │   ├── assets
+│   │   │   │   │   ├── EtherScanCollectionLogo.svg
+│   │   │   │   │   ├── EtherscanDark.svg
+│   │   │   │   │   ├── EtherscanLight.svg
+│   │   │   │   │   ├── Graphics-WEB-2021-01.png
+│   │   │   │   │   ├── Graphics-WEB-2021-02.png
+│   │   │   │   │   ├── Graphics-WEB-2021-03.png
+│   │   │   │   │   ├── Hotdrops-favicon.ico
+│   │   │   │   │   ├── LockWhite.svg
+│   │   │   │   │   ├── MetamaskFox.svg
+│   │   │   │   │   ├── PlayCircle.svg
+│   │   │   │   │   ├── UnlockableKey.svg
+│   │   │   │   │   ├── VideoLock.svg
+│   │   │   │   │   ├── defultUser.png
+│   │   │   │   │   ├── faviconRairWhite.ico
+│   │   │   │   │   ├── rair_favicon.ico
+│   │   │   │   │   ├── singleTokenHome.svg
+│   │   │   │   │   └── terp.png
+│   │   │   │   ├── mockUpPage.styles
+│   │   │   │   │   └── NftDataPageMain.styledComponents.tsx
+│   │   │   │   ├── mockupPage.types.ts
+│   │   │   │   └── utils
+│   │   │   │       ├── button
+│   │   │   │       │   ├── CustomButton.module.css
+│   │   │   │       │   ├── CustomButton.tsx
+│   │   │   │       │   └── ShowMoreItems.tsx
+│   │   │   │       └── image
+│   │   │   │           └── ImageCustomForSearch.tsx
+│   │   │   ├── Navigation
+│   │   │   │   ├── Menu.css
+│   │   │   │   ├── Menu.tsx
+│   │   │   │   ├── MenuComponents
+│   │   │   │   │   ├── MobileChoiseNav.tsx
+│   │   │   │   │   ├── MobileEditProfile.tsx
+│   │   │   │   │   ├── MobileListMenu.tsx
+│   │   │   │   │   ├── MobileNavigationList.tsx
+│   │   │   │   │   └── MobileProfileInfo.tsx
+│   │   │   │   └── NavigationItems
+│   │   │   │       └── NavigationItems.tsx
+│   │   │   ├── NotFound
+│   │   │   │   ├── NotFound.css
+│   │   │   │   └── NotFound.tsx
+│   │   │   ├── ResalePage
+│   │   │   │   ├── ItemOffer.tsx
+│   │   │   │   ├── ResalePage.tsx
+│   │   │   │   └── listOffers.types.ts
+│   │   │   ├── SeoTags
+│   │   │   │   └── MetaTags.tsx
+│   │   │   ├── ServerSettings
+│   │   │   │   ├── TextSettings.tsx
+│   │   │   │   ├── blockchainSettings.tsx
+│   │   │   │   ├── booleanSettings.tsx
+│   │   │   │   ├── categorySettings.tsx
+│   │   │   │   ├── colorSettings.tsx
+│   │   │   │   ├── contractManager.tsx
+│   │   │   │   ├── corsSettings.tsx
+│   │   │   │   ├── customValues.tsx
+│   │   │   │   ├── featuredBanner.tsx
+│   │   │   │   ├── footerSettings.tsx
+│   │   │   │   ├── index.tsx
+│   │   │   │   └── superAdmins.tsx
+│   │   │   ├── SplashPage
+│   │   │   │   ├── AuthorBlock
+│   │   │   │   │   └── AuthorBlock.tsx
+│   │   │   │   ├── CoinAgenda2021
+│   │   │   │   │   ├── AboutUsTeam
+│   │   │   │   │   │   └── index.tsx
+│   │   │   │   │   ├── CoinAgenda2021.css
+│   │   │   │   │   └── CoinAgenda2021.tsx
+│   │   │   │   ├── CommingSoon
+│   │   │   │   │   ├── ComingSoonNut.tsx
+│   │   │   │   │   └── CommingSoon.tsx
+│   │   │   │   ├── DefaultButtonBlock.tsx
+│   │   │   │   ├── ExclusiveNft
+│   │   │   │   │   └── ExclusiveNft.tsx
+│   │   │   │   ├── Greyman
+│   │   │   │   │   ├── AboutUsTeam
+│   │   │   │   │   │   └── index.tsx
+│   │   │   │   │   ├── GreymanSplashPage.tsx
+│   │   │   │   │   └── GreymanSplashPageMobile.css
+│   │   │   │   ├── ImmersiVerse
+│   │   │   │   │   ├── AboutUsTeam
+│   │   │   │   │   │   └── index.tsx
+│   │   │   │   │   └── ImmersiVerseSplashPage.tsx
+│   │   │   │   ├── JoinCom
+│   │   │   │   │   └── JoinCom.tsx
+│   │   │   │   ├── MarkKohler
+│   │   │   │   │   ├── AboutUsTeam
+│   │   │   │   │   │   └── index.tsx
+│   │   │   │   │   ├── InformationText
+│   │   │   │   │   │   └── index.tsx
+│   │   │   │   │   ├── MarkKohler.tsx
+│   │   │   │   │   ├── assets
+│   │   │   │   │   │   └── favicon.ico
+│   │   │   │   │   └── markKohler.css
+│   │   │   │   ├── NFTLA
+│   │   │   │   │   ├── AboutUsTeam
+│   │   │   │   │   │   └── index.tsx
+│   │   │   │   │   └── NFTLASplashPage.tsx
+│   │   │   │   ├── NFTNYC
+│   │   │   │   │   ├── AboutUsTeam
+│   │   │   │   │   │   └── index.tsx
+│   │   │   │   │   ├── NFTNYC.css
+│   │   │   │   │   └── NFTNYC.tsx
+│   │   │   │   ├── NipseyRelease
+│   │   │   │   │   ├── MailchimpComponent.tsx
+│   │   │   │   │   └── NipseyRelease.tsx
+│   │   │   │   ├── Nipseyverse
+│   │   │   │   │   ├── AboutUsTeam
+│   │   │   │   │   │   └── index.tsx
+│   │   │   │   │   └── index.tsx
+│   │   │   │   ├── NotCommercial
+│   │   │   │   │   ├── NotCommercial.css
+│   │   │   │   │   ├── NotCommercial.tsx
+│   │   │   │   │   ├── NotCommercialGeneric.tsx
+│   │   │   │   │   └── NotCommercialTemplate.tsx
+│   │   │   │   ├── NotCommercial-2
+│   │   │   │   │   ├── NotCommercial-2.css
+│   │   │   │   │   └── NotCommercialTemplate-2.tsx
+│   │   │   │   ├── Nutcrackers
+│   │   │   │   │   ├── AboutUsTeam
+│   │   │   │   │   │   └── index.tsx
+│   │   │   │   │   └── Nutcrackers.tsx
+│   │   │   │   ├── PrivacyPolicyPage
+│   │   │   │   │   ├── PrivacyPolicy.module.css
+│   │   │   │   │   └── PrivacyPolicy.tsx
+│   │   │   │   ├── PurchaseChecklist
+│   │   │   │   │   ├── ButtonHelp.tsx
+│   │   │   │   │   └── PurchaseChecklist.tsx
+│   │   │   │   ├── RAIRGenesis
+│   │   │   │   │   ├── AboutUsTeam
+│   │   │   │   │   │   └── index.tsx
+│   │   │   │   │   ├── RAIRGenesis.css
+│   │   │   │   │   └── RAIRGenesis.tsx
+│   │   │   │   ├── Roadmap
+│   │   │   │   │   └── RoadMap.tsx
+│   │   │   │   ├── SimDogs
+│   │   │   │   │   ├── AboutUsTeam
+│   │   │   │   │   │   └── index.tsx
+│   │   │   │   │   ├── InformationText
+│   │   │   │   │   │   └── index.tsx
+│   │   │   │   │   ├── SimDogs.css
+│   │   │   │   │   ├── SimDogs.tsx
+│   │   │   │   │   └── SimDogs_old.css
+│   │   │   │   ├── SlideLock
+│   │   │   │   │   ├── AboutUsTeam
+│   │   │   │   │   │   └── index.tsx
+│   │   │   │   │   ├── SlideLock.css
+│   │   │   │   │   └── SlideLock.tsx
+│   │   │   │   ├── SplashPage.css
+│   │   │   │   ├── SplashPageConfig
+│   │   │   │   │   ├── CardBlock
+│   │   │   │   │   │   ├── CardBlockWrapper
+│   │   │   │   │   │   │   ├── SplashPageCardWrapper.tsx
+│   │   │   │   │   │   │   └── StyledSplashPageCardWrapper.ts
+│   │   │   │   │   │   ├── CardButton
+│   │   │   │   │   │   │   ├── SplashCardButton.tsx
+│   │   │   │   │   │   │   ├── StyledButtonImage.ts
+│   │   │   │   │   │   │   └── StyledSplashCardButton.ts
+│   │   │   │   │   │   ├── CardButtonWrapper
+│   │   │   │   │   │   │   ├── SplashCardButtonsWrapper.tsx
+│   │   │   │   │   │   │   └── StyledSplashCardButtonsWrapper.ts
+│   │   │   │   │   │   ├── CardImage
+│   │   │   │   │   │   │   ├── SplashCardImage.tsx
+│   │   │   │   │   │   │   └── StyledSplashCardImage.ts
+│   │   │   │   │   │   ├── CardInfoBlock
+│   │   │   │   │   │   │   ├── SplashCardInfoBlock.tsx
+│   │   │   │   │   │   │   └── StyledSplashCardInfoBlock.ts
+│   │   │   │   │   │   └── CardText
+│   │   │   │   │   │       ├── SplashCardText.tsx
+│   │   │   │   │   │       └── StyledSplashCardText.ts
+│   │   │   │   │   ├── CardParagraphText
+│   │   │   │   │   │   ├── CardParagraghTextContainer
+│   │   │   │   │   │   │   └── CardParagraghTextContainer.tsx
+│   │   │   │   │   │   ├── CardParagraphText.tsx
+│   │   │   │   │   │   ├── styled
+│   │   │   │   │   │   │   └── CardParagraghText.styled.tsx
+│   │   │   │   │   │   └── types
+│   │   │   │   │   │       └── CardParagragh.types.ts
+│   │   │   │   │   ├── VideoBlock
+│   │   │   │   │   │   ├── UnlockableVideosWrapper
+│   │   │   │   │   │   │   ├── StyledVideoComponents.ts
+│   │   │   │   │   │   │   └── UnlockableVideosWrapper.tsx
+│   │   │   │   │   │   ├── VideoBlockWrapper
+│   │   │   │   │   │   │   ├── SplashVideoWrapper.tsx
+│   │   │   │   │   │   │   └── StyledSplashVideoWrapper.ts
+│   │   │   │   │   │   ├── VideoText
+│   │   │   │   │   │   │   ├── SplashVideoText.tsx
+│   │   │   │   │   │   │   └── StyledSplashVideoText.ts
+│   │   │   │   │   │   └── VideoTextBlock
+│   │   │   │   │   │       ├── SplashVideoTextBlock.tsx
+│   │   │   │   │   │       └── StyledSplashVideoTextBlock.ts
+│   │   │   │   │   ├── splashConfig.types.ts
+│   │   │   │   │   └── utils
+│   │   │   │   │       ├── hyperLink.ts
+│   │   │   │   │       └── reactSwalModal.tsx
+│   │   │   │   ├── SplashPageTemplate
+│   │   │   │   │   ├── AuthorCard
+│   │   │   │   │   │   ├── AuthorCard.css
+│   │   │   │   │   │   ├── AuthorCard.tsx
+│   │   │   │   │   │   └── AuthorCardButton.tsx
+│   │   │   │   │   ├── DonationSquares
+│   │   │   │   │   │   ├── DonationGrid.tsx
+│   │   │   │   │   │   ├── DonationSquare.css
+│   │   │   │   │   │   └── DonationSquare.tsx
+│   │   │   │   │   ├── ListExlusiveProduct
+│   │   │   │   │   │   ├── ListExlusiveProduct.css
+│   │   │   │   │   │   ├── ListExlusiveProduct.tsx
+│   │   │   │   │   │   ├── ListExlusiveProductItem.tsx
+│   │   │   │   │   │   └── ListExlusiveProductListItem.tsx
+│   │   │   │   │   ├── ModalHelp.tsx
+│   │   │   │   │   ├── NFTCounter
+│   │   │   │   │   │   ├── NFTCounter.css
+│   │   │   │   │   │   ├── NFTCounter.tsx
+│   │   │   │   │   │   └── NFTCounterTemplate.tsx
+│   │   │   │   │   ├── NFTImages
+│   │   │   │   │   │   ├── NFTImages.css
+│   │   │   │   │   │   └── NFTImages.tsx
+│   │   │   │   │   ├── StaticVideoTiles
+│   │   │   │   │   │   ├── StaticTiles.css
+│   │   │   │   │   │   └── StaticTiles.tsx
+│   │   │   │   │   ├── TimelineGeneric
+│   │   │   │   │   │   ├── TimelineGeneric.module.css
+│   │   │   │   │   │   └── TimelineGeneric.tsx
+│   │   │   │   │   ├── VideoPlayer
+│   │   │   │   │   │   ├── ShowVideoToLoggedInUsers.tsx
+│   │   │   │   │   │   ├── VideoPlayer.css
+│   │   │   │   │   │   ├── VideoPlayerBySignature .tsx
+│   │   │   │   │   │   └── VideoPlayerModule.tsx
+│   │   │   │   │   └── VideoTiles
+│   │   │   │   │       ├── StaticTiles.tsx
+│   │   │   │   │       ├── VideoTiles.css
+│   │   │   │   │       ├── VideoTiles.tsx
+│   │   │   │   │       ├── VideoTilesItem.tsx
+│   │   │   │   │       └── VideosTilesTest.tsx
+│   │   │   │   ├── TeamMeet
+│   │   │   │   │   ├── TeamComponentCommon.tsx
+│   │   │   │   │   ├── TeamMeetList.tsx
+│   │   │   │   │   ├── Teammate.tsx
+│   │   │   │   │   └── TeammateDesc.tsx
+│   │   │   │   ├── TermsUsePage
+│   │   │   │   │   ├── TermsUse.module.css
+│   │   │   │   │   └── TermsUse.tsx
+│   │   │   │   ├── Timeline
+│   │   │   │   │   ├── Timeline.module.css
+│   │   │   │   │   └── Timeline.tsx
+│   │   │   │   ├── Timer
+│   │   │   │   │   ├── CountDown.tsx
+│   │   │   │   │   └── Countdown.css
+│   │   │   │   ├── TokenLeft
+│   │   │   │   │   ├── TokenLeft.tsx
+│   │   │   │   │   ├── TokenLeftGreyman.tsx
+│   │   │   │   │   ├── TokenLeftTemplate.css
+│   │   │   │   │   └── TokenLeftTemplate.tsx
+│   │   │   │   ├── UkraineGlitchSplashPage
+│   │   │   │   │   ├── AboutUsTeam
+│   │   │   │   │   │   └── index.tsx
+│   │   │   │   │   ├── UkraineSplash.css
+│   │   │   │   │   └── UkraineSplashPage.tsx
+│   │   │   │   ├── UnlockVideos
+│   │   │   │   │   ├── UnlockVideoItem.tsx
+│   │   │   │   │   └── UnlockVideos.tsx
+│   │   │   │   ├── VaporverseSplash
+│   │   │   │   │   ├── AboutUsTeam
+│   │   │   │   │   │   └── index.tsx
+│   │   │   │   │   ├── VaporverseSplash.css
+│   │   │   │   │   └── VaporverseSplashPage.tsx
+│   │   │   │   ├── WarningModal
+│   │   │   │   │   └── WarningModal.tsx
+│   │   │   │   ├── assets
+│   │   │   │   │   ├── DiscordLogo.svg
+│   │   │   │   │   ├── MetaMaskFox.svg
+│   │   │   │   │   └── twitterIcon.svg
+│   │   │   │   ├── images
+│   │   │   │   │   ├── NFTLA
+│   │   │   │   │   │   ├── NFT-LA-Dig-V01-modified.webp
+│   │   │   │   │   │   ├── NFT-LA-Dig-V01.webp
+│   │   │   │   │   │   ├── NFT-LA-Dig-V02.webp
+│   │   │   │   │   │   ├── NFT-LA-Dig-V03.webp
+│   │   │   │   │   │   ├── NFT-LA-RAIR-2021.mp4
+│   │   │   │   │   │   └── nftLA.ts
+│   │   │   │   │   ├── NFTNYC
+│   │   │   │   │   │   ├── NFTNYX_TITLE.gif
+│   │   │   │   │   │   ├── nftnyc.ts
+│   │   │   │   │   │   ├── nftnyc_videobackground.gif
+│   │   │   │   │   │   ├── nftnyc_videobackground1.webp
+│   │   │   │   │   │   └── warning_0.webp
+│   │   │   │   │   ├── SxSw
+│   │   │   │   │   │   ├── SxSW-IMSV-ATX-2022-Concept01-modified.webp
+│   │   │   │   │   │   ├── SxSW-IMSV-ATX-2022-Concept01.webp
+│   │   │   │   │   │   ├── SxSW-IMSV-ATX-2022-Concept02.webp
+│   │   │   │   │   │   ├── SxSW-IMSV-ATX-2022-Concept03.webp
+│   │   │   │   │   │   └── sxSw.ts
+│   │   │   │   │   ├── UkraineGlitch
+│   │   │   │   │   │   ├── 126.webp
+│   │   │   │   │   │   ├── 1294.webp
+│   │   │   │   │   │   ├── 1989.webp
+│   │   │   │   │   │   ├── 4.webp
+│   │   │   │   │   │   ├── 497.webp
+│   │   │   │   │   │   ├── 5.gif
+│   │   │   │   │   │   ├── metamask-vid-final.webp
+│   │   │   │   │   │   ├── nftCountUkraine.webp
+│   │   │   │   │   │   ├── rounded_corners.webp
+│   │   │   │   │   │   ├── soldier.jpeg
+│   │   │   │   │   │   └── urkaineGlitch.ts
+│   │   │   │   │   ├── commingSoon
+│   │   │   │   │   │   ├── colab.webp
+│   │   │   │   │   │   ├── commingSoonImages.ts
+│   │   │   │   │   │   └── nuts-main.webp
+│   │   │   │   │   ├── favicons
+│   │   │   │   │   │   ├── ImmersiverseATX.ico
+│   │   │   │   │   │   ├── NFTNYX_TITLE.ico
+│   │   │   │   │   │   ├── NFT_favicon.ico
+│   │   │   │   │   │   ├── coinagenda.ico
+│   │   │   │   │   │   ├── favicon-simdogs.ico
+│   │   │   │   │   │   ├── favicon-ukraine.ico
+│   │   │   │   │   │   ├── greyman-favicon.ico
+│   │   │   │   │   │   ├── vv_Rair_logo.ico
+│   │   │   │   │   │   └── wallstreet80club.ico
+│   │   │   │   │   ├── greyMan
+│   │   │   │   │   │   ├── grayMan.ts
+│   │   │   │   │   │   ├── greyman.webp
+│   │   │   │   │   │   ├── greyman1.webp
+│   │   │   │   │   │   ├── not-fun.webp
+│   │   │   │   │   │   ├── pic1.webp
+│   │   │   │   │   │   ├── pic2.webp
+│   │   │   │   │   │   ├── pic3.webp
+│   │   │   │   │   │   ├── pic5.webp
+│   │   │   │   │   │   ├── pic6.webp
+│   │   │   │   │   │   ├── pic7.webp
+│   │   │   │   │   │   ├── playImg.webp
+│   │   │   │   │   │   └── playImgColored.webp
+│   │   │   │   │   ├── markKohler
+│   │   │   │   │   │   ├── MarkKohlerImage.webp
+│   │   │   │   │   │   ├── markHohler.ts
+│   │   │   │   │   │   └── taxhacksdemo.gif
+│   │   │   │   │   ├── nutcrackers
+│   │   │   │   │   │   ├── bg-nuts.webp
+│   │   │   │   │   │   ├── block-nuts-photos.webp
+│   │   │   │   │   │   ├── cracker-icon.webp
+│   │   │   │   │   │   ├── exclusive-nuts_1.webp
+│   │   │   │   │   │   ├── exclusive-nuts_2.webp
+│   │   │   │   │   │   ├── exclusive-nuts_3.webp
+│   │   │   │   │   │   ├── exclusive-nuts_4.webp
+│   │   │   │   │   │   ├── exclusive-nuts_5.webp
+│   │   │   │   │   │   ├── nft-token-nuts.webp
+│   │   │   │   │   │   └── nutcrackers.ts
+│   │   │   │   │   ├── rairGenesis
+│   │   │   │   │   │   ├── TV-RAIR-StandardColor-0.gif
+│   │   │   │   │   │   ├── creator-flow.webp
+│   │   │   │   │   │   └── rairGenesis.ts
+│   │   │   │   │   ├── simDogs
+│   │   │   │   │   │   ├── SimDogs0.webp
+│   │   │   │   │   │   ├── SimDogs1.webp
+│   │   │   │   │   │   ├── SimDogs2.webp
+│   │   │   │   │   │   ├── SimDogs3.webp
+│   │   │   │   │   │   ├── SimDogs4.webp
+│   │   │   │   │   │   └── simDogs.ts
+│   │   │   │   │   ├── slideLock
+│   │   │   │   │   │   ├── NEW-Logo-sample-slidelock-1.webp
+│   │   │   │   │   │   ├── Slide-Toppic-01.webp
+│   │   │   │   │   │   ├── slide-NFT1.webp
+│   │   │   │   │   │   ├── slide-NFT2.webp
+│   │   │   │   │   │   ├── slide-NFT3.webp
+│   │   │   │   │   │   ├── slide-NFT4.webp
+│   │   │   │   │   │   ├── slideLock.ts
+│   │   │   │   │   │   ├── slidelock_background.webp
+│   │   │   │   │   │   └── slidelock_video_background.webp
+│   │   │   │   │   ├── splashPageImages
+│   │   │   │   │   │   ├── Pods.webp
+│   │   │   │   │   │   ├── bandana.webp
+│   │   │   │   │   │   ├── cepk.webp
+│   │   │   │   │   │   ├── digital-mobile.webp
+│   │   │   │   │   │   ├── exclusive_1.webp
+│   │   │   │   │   │   ├── exclusive_2.webp
+│   │   │   │   │   │   ├── exclusive_3.webp
+│   │   │   │   │   │   ├── exclusive_4.webp
+│   │   │   │   │   │   ├── humble.webp
+│   │   │   │   │   │   ├── image_1.webp
+│   │   │   │   │   │   ├── image_2.webp
+│   │   │   │   │   │   ├── image_3.webp
+│   │   │   │   │   │   ├── left-tokens.jpeg
+│   │   │   │   │   │   ├── main-nft-screen.webp
+│   │   │   │   │   │   ├── maraphon.webp
+│   │   │   │   │   │   ├── nft-mobile_1.webp
+│   │   │   │   │   │   ├── nft-mobile_2.webp
+│   │   │   │   │   │   ├── nipsey-bg-mobile.webp
+│   │   │   │   │   │   ├── nipsey.webp
+│   │   │   │   │   │   ├── nipsey1.webp
+│   │   │   │   │   │   ├── nonCommercial.webp
+│   │   │   │   │   │   ├── nonCommercial2-modified.webp
+│   │   │   │   │   │   ├── nonCommercial2.webp
+│   │   │   │   │   │   ├── or.webp
+│   │   │   │   │   │   ├── poweredRair.webp
+│   │   │   │   │   │   ├── rair_tech_mobile.webp
+│   │   │   │   │   │   ├── splashPage.ts
+│   │   │   │   │   │   ├── victory_lap.webp
+│   │   │   │   │   │   ├── video-present.webp
+│   │   │   │   │   │   ├── warning_1.webp
+│   │   │   │   │   │   └── warning_2.webp
+│   │   │   │   │   ├── teamMeetList
+│   │   │   │   │   │   ├── AndreMiripolsky.webp
+│   │   │   │   │   │   ├── BruceFenton2.webp
+│   │   │   │   │   │   ├── DogTax_Summit.webp
+│   │   │   │   │   │   ├── MarkJKohler.webp
+│   │   │   │   │   │   ├── MichaelTerpin.webp
+│   │   │   │   │   │   ├── NFTLA_icon.webp
+│   │   │   │   │   │   ├── RairLogo_Kohler.webp
+│   │   │   │   │   │   ├── RairLogo_Koholer-text.webp
+│   │   │   │   │   │   ├── coinagenda.webp
+│   │   │   │   │   │   ├── estate_team.webp
+│   │   │   │   │   │   ├── foundation.webp
+│   │   │   │   │   │   ├── greymanAuthor.webp
+│   │   │   │   │   │   ├── immersiverse_logo.webp
+│   │   │   │   │   │   ├── movementontheground.webp
+│   │   │   │   │   │   ├── mrlee.webp
+│   │   │   │   │   │   ├── nftnyc_logo.webp
+│   │   │   │   │   │   ├── nuts-teammate.webp
+│   │   │   │   │   │   ├── rair-block.webp
+│   │   │   │   │   │   ├── slidelock_team.webp
+│   │   │   │   │   │   ├── south-dig.webp
+│   │   │   │   │   │   └── teamMeetList.ts
+│   │   │   │   │   ├── vaporverse
+│   │   │   │   │   │   ├── vaporverse.ts
+│   │   │   │   │   │   ├── vaporverse_authorcard_background.webp
+│   │   │   │   │   │   ├── vaporverse_video_background.webp
+│   │   │   │   │   │   ├── vv_NFT_0.webp
+│   │   │   │   │   │   ├── vv_NFT_1.webp
+│   │   │   │   │   │   ├── vv_NFT_2.webp
+│   │   │   │   │   │   ├── vv_NFT_3.webp
+│   │   │   │   │   │   ├── vv_NFT_4.webp
+│   │   │   │   │   │   ├── vv_Rair_logo.webp
+│   │   │   │   │   │   ├── vv_test_transmission.webp
+│   │   │   │   │   │   ├── vv_warning_1.webp
+│   │   │   │   │   │   └── vv_warning_2.webp
+│   │   │   │   │   └── wallstreet80sclub
+│   │   │   │   │       ├── wallstreet.webp
+│   │   │   │   │       ├── wallstreet1.webp
+│   │   │   │   │       ├── wallstreet2.webp
+│   │   │   │   │       ├── wallstreet80sclub.ts
+│   │   │   │   │       ├── wallstreetA.webp
+│   │   │   │   │       ├── wallstreetB.webp
+│   │   │   │   │       ├── wallstreetC.webp
+│   │   │   │   │       ├── wallstreetCounter.webp
+│   │   │   │   │       ├── wallstreetD.webp
+│   │   │   │   │       ├── wallstreetE.webp
+│   │   │   │   │       └── wallstreetF.webp
+│   │   │   │   ├── splashPage.types.ts
+│   │   │   │   ├── splashPageProductsHook.tsx
+│   │   │   │   └── wallstreet80sclub
+│   │   │   │       ├── AboutUsTeam
+│   │   │   │       │   └── index.tsx
+│   │   │   │       ├── wallstreet80sclub.css
+│   │   │   │       └── wallstreet80sclub.tsx
+│   │   │   ├── ThankYouPage
+│   │   │   │   ├── ThankYouPage.module.css
+│   │   │   │   └── index.tsx
+│   │   │   ├── UserProfilePage
+│   │   │   │   ├── UserProfileCreated
+│   │   │   │   │   └── UserProfileCreated.tsx
+│   │   │   │   ├── UserProfileFavorites
+│   │   │   │   │   └── UserProfileFavoritesTab.tsx
+│   │   │   │   ├── UserProfilePage.css
+│   │   │   │   └── UserProfilePage.tsx
+│   │   │   ├── UserProfileSettings
+│   │   │   │   ├── EditMode
+│   │   │   │   │   └── EditMode.tsx
+│   │   │   │   ├── NotificationPage
+│   │   │   │   │   ├── NotificationPage.css
+│   │   │   │   │   ├── NotificationPage.tsx
+│   │   │   │   │   └── images
+│   │   │   │   │       └── icon-remove.png
+│   │   │   │   ├── PopUpNotification
+│   │   │   │   │   ├── NotificationBox
+│   │   │   │   │   │   ├── NotificationBox.css
+│   │   │   │   │   │   └── NotificationBox.tsx
+│   │   │   │   │   ├── PopUpNotification.tsx
+│   │   │   │   │   └── images
+│   │   │   │   │       └── image.png
+│   │   │   │   ├── PopUpSetting.tsx
+│   │   │   │   ├── SettingsIcons
+│   │   │   │   │   └── SettingsIcons.tsx
+│   │   │   │   ├── TermsOfServicePopUp
+│   │   │   │   │   └── TermsOfServicePopUp.tsx
+│   │   │   │   ├── UploadProfilePicture
+│   │   │   │   │   ├── Edit
+│   │   │   │   │   │   ├── Edit.module.css
+│   │   │   │   │   │   └── Edit.tsx
+│   │   │   │   │   ├── ImageUpload
+│   │   │   │   │   │   ├── ImageUpload.module.css
+│   │   │   │   │   │   └── ImageUpload.tsx
+│   │   │   │   │   ├── Name
+│   │   │   │   │   │   ├── Name.module.css
+│   │   │   │   │   │   └── Name.tsx
+│   │   │   │   │   ├── Profile
+│   │   │   │   │   │   ├── Profile.module.css
+│   │   │   │   │   │   └── Profile.tsx
+│   │   │   │   │   ├── Status
+│   │   │   │   │   │   ├── Status.module.css
+│   │   │   │   │   │   └── Status.tsx
+│   │   │   │   │   ├── UploadProfilePicture.module.css
+│   │   │   │   │   └── UploadProfilePicture.tsx
+│   │   │   │   ├── UserProfileSettings.css
+│   │   │   │   ├── UserProfileSettings.tsx
+│   │   │   │   └── images
+│   │   │   │       └── defaultUserPictures.png
+│   │   │   ├── YotiPage
+│   │   │   │   ├── YotiPage.css
+│   │   │   │   └── YotiPage.tsx
+│   │   │   ├── adminViews
+│   │   │   │   ├── BatchERC20Transfer.tsx
+│   │   │   │   ├── BlockchainSwitcher.tsx
+│   │   │   │   ├── ImportAndTransfer.tsx
+│   │   │   │   ├── ImportExternalContracts.tsx
+│   │   │   │   ├── LicenseExchange.tsx
+│   │   │   │   ├── UserManager.tsx
+│   │   │   │   ├── adminView.types.ts
+│   │   │   │   └── transferTokens.tsx
+│   │   │   ├── common
+│   │   │   │   ├── InputField.tsx
+│   │   │   │   ├── InputSelect.tsx
+│   │   │   │   ├── LoadingComponent.tsx
+│   │   │   │   ├── OnboardingButton
+│   │   │   │   │   ├── OnboardingButton.css
+│   │   │   │   │   └── OnboardingButton.tsx
+│   │   │   │   ├── PurchaseToken.tsx
+│   │   │   │   ├── Tooltip
+│   │   │   │   │   ├── TooltipBox.css
+│   │   │   │   │   ├── TooltipBox.tsx
+│   │   │   │   │   └── types.ts
+│   │   │   │   └── commonTypes
+│   │   │   │       ├── InputSelectTypes.types.ts
+│   │   │   │       └── PurchaseTokenTypes.types.ts
+│   │   │   ├── creatorAndConsumerModes.types.ts
+│   │   │   ├── creatorStudio
+│   │   │   │   ├── BannerCollection.tsx
+│   │   │   │   ├── ContractDetails.tsx
+│   │   │   │   ├── Contracts.tsx
+│   │   │   │   ├── Deploy.tsx
+│   │   │   │   ├── FixedBottomNavigation.tsx
+│   │   │   │   ├── ListCollections.tsx
+│   │   │   │   ├── NavigatorContract.tsx
+│   │   │   │   ├── NavigatorFactory.tsx
+│   │   │   │   ├── common
+│   │   │   │   │   ├── blockchainURIManager.tsx
+│   │   │   │   │   └── customFeeRow.tsx
+│   │   │   │   ├── creatorSteps
+│   │   │   │   │   ├── CustomizeFees.tsx
+│   │   │   │   │   ├── ListLocks.tsx
+│   │   │   │   │   ├── ListOffers.tsx
+│   │   │   │   │   ├── MediaUpload.tsx
+│   │   │   │   │   ├── OfferRow.tsx
+│   │   │   │   │   ├── ResaleMarketplace.tsx
+│   │   │   │   │   ├── batchMetadata.tsx
+│   │   │   │   │   ├── propertyRow.tsx
+│   │   │   │   │   └── singleMetadataEditor.tsx
+│   │   │   │   ├── creatorStudio.types.ts
+│   │   │   │   ├── diamondCreatorSteps
+│   │   │   │   │   ├── DiamondMinterMarketplace.tsx
+│   │   │   │   │   ├── ListOffersDiamond.tsx
+│   │   │   │   │   ├── MarketplaceOfferConfig.tsx
+│   │   │   │   │   ├── diamondCustomPaymentRow.tsx
+│   │   │   │   │   └── diamondOfferRow.tsx
+│   │   │   │   └── workflowSteps.tsx
+│   │   │   ├── iframePage
+│   │   │   │   ├── IframePage.tsx
+│   │   │   │   ├── iframeStyles.css
+│   │   │   │   └── testIframe.tsx
+│   │   │   ├── layout
+│   │   │   │   ├── Layout.css
+│   │   │   │   ├── Layout.tsx
+│   │   │   │   └── layout.types.ts
+│   │   │   ├── marketplace
+│   │   │   │   ├── BatchRow.tsx
+│   │   │   │   ├── BuyTokenModalContent.tsx
+│   │   │   │   ├── MinterMarketplace.tsx
+│   │   │   │   ├── MinterMarketplaceItem.tsx
+│   │   │   │   └── marketplace.types.ts
+│   │   │   ├── nft
+│   │   │   │   ├── MyItems.css
+│   │   │   │   ├── PersonalProfile
+│   │   │   │   │   ├── PersonalProfileBackground
+│   │   │   │   │   │   ├── PersonalProfileBackground.module.css
+│   │   │   │   │   │   └── PersonalProfileBackground.tsx
+│   │   │   │   │   ├── PersonalProfileFavoritesTab
+│   │   │   │   │   │   ├── BtnMyFavorite
+│   │   │   │   │   │   │   ├── BtnMyFavorite.styled.tsx
+│   │   │   │   │   │   │   └── BtnMyFavorite.tsx
+│   │   │   │   │   │   ├── MyfavoriteItem
+│   │   │   │   │   │   │   ├── MyFavoriteStyledItems.tsx
+│   │   │   │   │   │   │   └── MyfavoriteItem.tsx
+│   │   │   │   │   │   ├── PersonalProfileFavoritesTab.tsx
+│   │   │   │   │   │   └── myFavorites.types.ts
+│   │   │   │   │   ├── PersonalProfileIcon
+│   │   │   │   │   │   ├── PersonalProfileIcon.module.css
+│   │   │   │   │   │   └── PersonalProfileIcon.tsx
+│   │   │   │   │   ├── PersonalProfileMyCreated
+│   │   │   │   │   │   └── PersonalProfileMyCreated.tsx
+│   │   │   │   │   ├── PersonalProfileMyNftTab
+│   │   │   │   │   │   ├── PersonalProfileMyNftTab.css
+│   │   │   │   │   │   ├── PersonalProfileMyNftTab.tsx
+│   │   │   │   │   │   └── ResaleModal
+│   │   │   │   │   │       ├── ResaleModal.css
+│   │   │   │   │   │       └── ResaleModal.tsx
+│   │   │   │   │   └── PersonalProfileMyVideoTab
+│   │   │   │   │       └── PersonalProfileMyVideoTab.tsx
+│   │   │   │   ├── Token.tsx
+│   │   │   │   ├── myDiamondItems.tsx
+│   │   │   │   ├── nft.types.ts
+│   │   │   │   └── rairCollection.tsx
+│   │   │   ├── video
+│   │   │   │   ├── video.types.ts
+│   │   │   │   ├── videoItem.tsx
+│   │   │   │   ├── videoList.tsx
+│   │   │   │   ├── videoOfferBuy.tsx
+│   │   │   │   ├── videoPlayer.tsx
+│   │   │   │   ├── videoPlayerGenerall.tsx
+│   │   │   │   └── videoPlayerStyles.css
+│   │   │   └── videoManager
+│   │   │       ├── OfferSelector.tsx
+│   │   │       └── VideoManager.tsx
+│   │   ├── contexts
+│   │   │   └── CreatorWorkflowContext.ts
+│   │   ├── contracts
+│   │   │   ├── CreditHandlerABI.json
+│   │   │   ├── LicenseExchangeABI.json
+│   │   │   ├── Minter_Marketplace.json
+│   │   │   ├── RAIR777.json
+│   │   │   ├── RAIR_ERC721.json
+│   │   │   ├── RAIR_ERC721mod.json
+│   │   │   ├── RAIR_Token_Factory.json
+│   │   │   ├── RAIR_Token_Purchaser.json
+│   │   │   ├── Resale_Marketplace.json
+│   │   │   ├── diamondFactoryABI.json
+│   │   │   ├── diamondMarketplaceABI.json
+│   │   │   ├── diamondRAIR721ABI.json
+│   │   │   └── index.ts
+│   │   ├── fonts
+│   │   │   ├── Acme
+│   │   │   │   ├── Acme-Regular.ttf
+│   │   │   │   └── OFL.txt
+│   │   │   ├── Bazar.ttf
+│   │   │   ├── Cooper Std Black
+│   │   │   │   ├── Cooper Std Black.ttf
+│   │   │   │   └── readme.html
+│   │   │   ├── Inter
+│   │   │   │   ├── Inter-VariableFontwght.ttf
+│   │   │   │   ├── OFL.txt
+│   │   │   │   ├── README.txt
+│   │   │   │   └── static
+│   │   │   │       ├── Inter-Black.ttf
+│   │   │   │       ├── Inter-Bold.ttf
+│   │   │   │       ├── Inter-ExtraBold.ttf
+│   │   │   │       ├── Inter-ExtraLight.ttf
+│   │   │   │       ├── Inter-Light.ttf
+│   │   │   │       ├── Inter-Medium.ttf
+│   │   │   │       ├── Inter-Regular.ttf
+│   │   │   │       ├── Inter-SemiBold.ttf
+│   │   │   │       └── Inter-Thin.ttf
+│   │   │   ├── Nebulosa
+│   │   │   │   ├── Graviton - NebulosaBlackDisplaySolid.otf
+│   │   │   │   └── Graviton - NebulosaBlackDisplayStencil.otf
+│   │   │   ├── Nunito
+│   │   │   │   ├── Nunito-Italic-VariableFont_wght.ttf
+│   │   │   │   ├── Nunito-VariableFont_wght.ttf
+│   │   │   │   ├── OFL.txt
+│   │   │   │   ├── README.txt
+│   │   │   │   └── static
+│   │   │   │       ├── Nunito-Black.ttf
+│   │   │   │       ├── Nunito-BlackItalic.ttf
+│   │   │   │       ├── Nunito-Bold.ttf
+│   │   │   │       ├── Nunito-BoldItalic.ttf
+│   │   │   │       ├── Nunito-ExtraBold.ttf
+│   │   │   │       ├── Nunito-ExtraBoldItalic.ttf
+│   │   │   │       ├── Nunito-ExtraLight.ttf
+│   │   │   │       ├── Nunito-ExtraLightItalic.ttf
+│   │   │   │       ├── Nunito-Italic.ttf
+│   │   │   │       ├── Nunito-Light.ttf
+│   │   │   │       ├── Nunito-LightItalic.ttf
+│   │   │   │       ├── Nunito-Medium.ttf
+│   │   │   │       ├── Nunito-MediumItalic.ttf
+│   │   │   │       ├── Nunito-Regular.ttf
+│   │   │   │       ├── Nunito-SemiBold.ttf
+│   │   │   │       └── Nunito-SemiBoldItalic.ttf
+│   │   │   ├── charriot_deluxe
+│   │   │   │   ├── CharriotDeluxe.ttf
+│   │   │   │   ├── README.html
+│   │   │   │   ├── charactersheet.gif
+│   │   │   │   └── charriot-deluxe.gif
+│   │   │   ├── copperplate
+│   │   │   │   ├── OPTICopperplate-Heavy.otf
+│   │   │   │   ├── OPTICopperplate-Light.otf
+│   │   │   │   └── OPTICopperplate.otf
+│   │   │   ├── static
+│   │   │   │   ├── PlusJakartaSans-Bold.ttf
+│   │   │   │   ├── PlusJakartaSans-BoldItalic.ttf
+│   │   │   │   ├── PlusJakartaSans-ExtraBold.ttf
+│   │   │   │   ├── PlusJakartaSans-ExtraBoldItalic.ttf
+│   │   │   │   ├── PlusJakartaSans-ExtraLight.ttf
+│   │   │   │   ├── PlusJakartaSans-ExtraLightItalic.ttf
+│   │   │   │   ├── PlusJakartaSans-Italic.ttf
+│   │   │   │   ├── PlusJakartaSans-Light.ttf
+│   │   │   │   ├── PlusJakartaSans-LightItalic.ttf
+│   │   │   │   ├── PlusJakartaSans-Medium.ttf
+│   │   │   │   ├── PlusJakartaSans-MediumItalic.ttf
+│   │   │   │   └── PlusJakartaSans-Regular.ttf
+│   │   │   ├── vf
+│   │   │   │   ├── PlusJakartaSans-Italic[wght].ttf
+│   │   │   │   └── PlusJakartaSans[wght].ttf
+│   │   │   └── webfonts
+│   │   │       ├── PlusJakartaSans-Bold.woff
+│   │   │       ├── PlusJakartaSans-Bold.woff2
+│   │   │       ├── PlusJakartaSans-BoldItalic.woff
+│   │   │       ├── PlusJakartaSans-BoldItalic.woff2
+│   │   │       ├── PlusJakartaSans-ExtraBold.woff
+│   │   │       ├── PlusJakartaSans-ExtraBold.woff2
+│   │   │       ├── PlusJakartaSans-ExtraBoldItalic.woff
+│   │   │       ├── PlusJakartaSans-ExtraBoldItalic.woff2
+│   │   │       ├── PlusJakartaSans-ExtraLight.woff
+│   │   │       ├── PlusJakartaSans-ExtraLight.woff2
+│   │   │       ├── PlusJakartaSans-ExtraLightItalic.woff
+│   │   │       ├── PlusJakartaSans-ExtraLightItalic.woff2
+│   │   │       ├── PlusJakartaSans-Italic.woff
+│   │   │       ├── PlusJakartaSans-Italic.woff2
+│   │   │       ├── PlusJakartaSans-Light.woff
+│   │   │       ├── PlusJakartaSans-Light.woff2
+│   │   │       ├── PlusJakartaSans-LightItalic.woff
+│   │   │       ├── PlusJakartaSans-LightItalic.woff2
+│   │   │       ├── PlusJakartaSans-Medium.woff
+│   │   │       ├── PlusJakartaSans-Medium.woff2
+│   │   │       ├── PlusJakartaSans-MediumItalic.woff
+│   │   │       ├── PlusJakartaSans-MediumItalic.woff2
+│   │   │       ├── PlusJakartaSans-Regular.woff
+│   │   │       └── PlusJakartaSans-Regular.woff2
+│   │   ├── hooks
+│   │   │   ├── useComponentVisible.tsx
+│   │   │   ├── useConnectUser.tsx
+│   │   │   ├── useContracts.tsx
+│   │   │   ├── useIPFSImageLink.tsx
+│   │   │   ├── useOpenVideoPlayer.tsx
+│   │   │   ├── useReduxHooks.tsx
+│   │   │   ├── useServerSettings.tsx
+│   │   │   ├── useSwal.ts
+│   │   │   ├── useWeb3Tx.ts
+│   │   │   └── useWindowDimensions.tsx
+│   │   ├── images
+│   │   │   ├── BlackBg.webp
+│   │   │   ├── ClayBg.webp
+│   │   │   ├── Default-RairTech.webp
+│   │   │   ├── Discord-Logo-White.svg
+│   │   │   ├── Hotdrops-favicon.ico
+│   │   │   ├── HotdropsLogoLight.png
+│   │   │   ├── RAIR-Tech-Logo-POWERED-BY-BLACK-2021.webp
+│   │   │   ├── RAIR-Tech-Logo-POWERED-BY-WHITE-2021.webp
+│   │   │   ├── astar.ico
+│   │   │   ├── base-logo.svg
+│   │   │   ├── binance-diamond.svg
+│   │   │   ├── coreIdlogo.avif
+│   │   │   ├── coreNewIcon.png
+│   │   │   ├── curios.webp
+│   │   │   ├── dapper-logo.webp
+│   │   │   ├── defaultAvatarProfile.webp
+│   │   │   ├── discord-white-no-border.webp
+│   │   │   ├── discord.png
+│   │   │   ├── discord.webp
+│   │   │   ├── discord1.png
+│   │   │   ├── documentIcon.svg
+│   │   │   ├── ethereum-logo.svg
+│   │   │   ├── favicon2.png
+│   │   │   ├── grandpa.gif
+│   │   │   ├── hotDrops_defaultBanner-1.png
+│   │   │   ├── hotDrops_defaultBanner.png
+│   │   │   ├── hotdrops-default.png
+│   │   │   ├── imageIcon.svg
+│   │   │   ├── index.tsx
+│   │   │   ├── kid.gif
+│   │   │   ├── lenny.gif
+│   │   │   ├── loading-favicon.svg
+│   │   │   ├── logo-hotdrops.png
+│   │   │   ├── metamask_logo.webp
+│   │   │   ├── mintable-logo.webp
+│   │   │   ├── mobile-logo-hotdrops.png
+│   │   │   ├── oneOf-logo.webp
+│   │   │   ├── openSea-logo.webp
+│   │   │   ├── polygon-matic.svg
+│   │   │   ├── rair-website-webp
+│   │   │   │   ├── website-graphics
+│   │   │   │   │   ├── brand_engagement_rairtech_icon.webp
+│   │   │   │   │   ├── dark and light mode top icons
+│   │   │   │   │   │   ├── distribution_rairtech_darkmode_3.webp
+│   │   │   │   │   │   ├── distribution_rairtech_light_mode_3.webp
+│   │   │   │   │   │   ├── encrypted_streaming_rairtech_darkmode_2.webp
+│   │   │   │   │   │   ├── encrypted_streaming_rairtech_light_mode_2.webp
+│   │   │   │   │   │   ├── index.tsx
+│   │   │   │   │   │   ├── minting_engine_rairtech_darkmode_1.webp
+│   │   │   │   │   │   └── minting_engine_rairtech_light_mode_1.webp
+│   │   │   │   │   ├── elearning_rairtech.webp
+│   │   │   │   │   ├── gaming_rairtech.webp
+│   │   │   │   │   ├── iframe.webp
+│   │   │   │   │   ├── index.tsx
+│   │   │   │   │   ├── live_events_rairtech.webp
+│   │   │   │   │   ├── media_entertainment_rairtech.webp
+│   │   │   │   │   ├── podcast_music_rairtech.webp
+│   │   │   │   │   ├── rairAPI_nfts_rairtech.webp
+│   │   │   │   │   ├── rairMarket_nfts_rairtech.webp
+│   │   │   │   │   ├── rairMint_nfts_rairtech.webp
+│   │   │   │   │   ├── rairPlayer_nfts_rairtech.webp
+│   │   │   │   │   ├── rairStream_nfts_rairtech.webp
+│   │   │   │   │   └── topbanner_nfts_rairtech.webp
+│   │   │   │   └── website-logos
+│   │   │   │       ├── alchemy_logo_2022.webp
+│   │   │   │       ├── binance_logo_2022.webp
+│   │   │   │       ├── ethereum_logo_2022.webp
+│   │   │   │       ├── index.tsx
+│   │   │   │       ├── kred_logo_2022.webp
+│   │   │   │       ├── moralis_logo_2022.webp
+│   │   │   │       └── polygon_logo_2022.webp
+│   │   │   ├── rairLogo_blue.webp
+│   │   │   ├── rairTechLogoBlack.webp
+│   │   │   ├── rairTechLogoWhite.webp
+│   │   │   ├── rair_favicon.ico
+│   │   │   ├── rarible-logo.webp
+│   │   │   ├── sonium_logo.svg
+│   │   │   ├── verify-icon.png
+│   │   │   ├── videoIcon.svg
+│   │   │   └── yoti-logo.png
+│   │   ├── index.css
+│   │   ├── main.tsx
+│   │   ├── providers
+│   │   │   └── ModalProvider
+│   │   │       ├── ModalProvider.tsx
+│   │   │       ├── actions.ts
+│   │   │       └── index.ts
+│   │   ├── redux
+│   │   │   ├── colorSlice.ts
+│   │   │   ├── commonTypes.ts
+│   │   │   ├── notificationsSlice.ts
+│   │   │   ├── searchbarSlice.ts
+│   │   │   ├── seoSlice.ts
+│   │   │   ├── settingsSlice.ts
+│   │   │   ├── store.ts
+│   │   │   ├── tokenSlice.ts
+│   │   │   ├── userSlice.ts
+│   │   │   ├── videoSlice.ts
+│   │   │   └── web3Slice.ts
+│   │   ├── styled-components
+│   │   │   ├── SocialLinkIcons
+│   │   │   │   └── SocialLinkIcons.tsx
+│   │   │   └── nft
+│   │   │       ├── AppContainer.tsx
+│   │   │       ├── AppContainer.types.tsx
+│   │   │       └── Token.styles.ts
+│   │   ├── styles
+│   │   │   └── userProfile.css
+│   │   ├── types
+│   │   │   ├── apiResponseTypes.ts
+│   │   │   ├── commonTypes.ts
+│   │   │   └── databaseTypes.ts
+│   │   ├── typescript-global-types
+│   │   │   ├── images.d.ts
+│   │   │   └── index.d.ts
+│   │   ├── utils
+│   │   │   ├── blockchainData.ts
+│   │   │   ├── checkIPFSanimation.ts
+│   │   │   ├── copyEmbed.tsx
+│   │   │   ├── csvParser.ts
+│   │   │   ├── determineColorRange.ts
+│   │   │   ├── determineColorRarity.ts
+│   │   │   ├── durationUtils.ts
+│   │   │   ├── getRandomValues.ts
+│   │   │   ├── getToken.ts
+│   │   │   ├── googleAnalytics.tsx
+│   │   │   ├── gtag.ts
+│   │   │   ├── headers.ts
+│   │   │   ├── metamaskUtils.ts
+│   │   │   ├── offerLockColors.ts
+│   │   │   ├── rFetch.ts
+│   │   │   ├── setTitle.ts
+│   │   │   ├── sockets.ts
+│   │   │   └── utils.types.ts
+│   │   ├── views
+│   │   │   └── ErrorFallback
+│   │   │       └── ErrorFallback.tsx
+│   │   └── vite-env.d.ts
+│   ├── tsconfig.json
+│   ├── tsconfig.node.json
+│   ├── vite.config.ts
+│   └── yarn.lock
+├── core-api
+│   ├── Dockerfile
+│   ├── Dockerfile.prod
+│   ├── Procfile
+│   ├── Procfile_dev
+│   ├── README.md
+│   ├── VERSION
+│   ├── assets
+│   │   └── sample.csv
+│   ├── bin
+│   │   ├── Multer
+│   │   │   └── Config.js
+│   │   ├── api
+│   │   │   ├── analytics
+│   │   │   │   ├── analytics.Controller.js
+│   │   │   │   └── analytics.Server.js
+│   │   │   ├── auth
+│   │   │   │   ├── auth.Controller.js
+│   │   │   │   └── auth.Service.js
+│   │   │   ├── categories
+│   │   │   │   ├── categories.Controller.js
+│   │   │   │   └── categories.Service.js
+│   │   │   ├── contracts
+│   │   │   │   ├── contracts.Controller.js
+│   │   │   │   └── contracts.Service.js
+│   │   │   ├── credits
+│   │   │   │   ├── credits.Controller.js
+│   │   │   │   └── credits.Service.js
+│   │   │   ├── favorites
+│   │   │   │   ├── favorites.Controller.js
+│   │   │   │   └── favorites.Service.js
+│   │   │   ├── files
+│   │   │   │   ├── files.Controller.js
+│   │   │   │   └── files.Service.js
+│   │   │   ├── nft
+│   │   │   │   ├── nft.Controller.js
+│   │   │   │   └── nft.Service.js
+│   │   │   ├── notifications
+│   │   │   │   ├── notifications.Controller.js
+│   │   │   │   └── notifications.Service.js
+│   │   │   ├── offers
+│   │   │   │   ├── offers.Controller.js
+│   │   │   │   └── offers.Service.js
+│   │   │   ├── products
+│   │   │   │   ├── product.Controller.js
+│   │   │   │   └── product.Service.js
+│   │   │   ├── resales
+│   │   │   │   ├── resales.Controller.js
+│   │   │   │   └── resales.Service.js
+│   │   │   ├── search
+│   │   │   │   ├── search.Controller.js
+│   │   │   │   └── search.Service.js
+│   │   │   ├── settings
+│   │   │   │   ├── settings.Controller.js
+│   │   │   │   └── settings.Service.js
+│   │   │   ├── tokens
+│   │   │   │   ├── tokens.Controller.js
+│   │   │   │   └── tokens.Service.js
+│   │   │   ├── transactions
+│   │   │   │   ├── transactions.Controller.js
+│   │   │   │   └── transactions.Service.js
+│   │   │   ├── upload
+│   │   │   │   ├── upload.Controller.js
+│   │   │   │   └── upload.Service.js
+│   │   │   └── users
+│   │   │       ├── users.Controller.js
+│   │   │       └── users.Service.js
+│   │   ├── config
+│   │   │   └── index.js
+│   │   ├── hls-starter.js
+│   │   ├── index.js
+│   │   ├── integrations
+│   │   │   ├── ethers
+│   │   │   │   ├── contractInstances.js
+│   │   │   │   ├── importContractData.js
+│   │   │   │   ├── tokenValidation.js
+│   │   │   │   └── web3Signature.js
+│   │   │   ├── gcp
+│   │   │   │   └── index.js
+│   │   │   ├── ipfsService
+│   │   │   │   ├── filebase.js
+│   │   │   │   ├── index.js
+│   │   │   │   └── pinata.js
+│   │   │   ├── smartContracts
+│   │   │   │   ├── CreditHandlerABI.json
+│   │   │   │   ├── Minter_Marketplace.json
+│   │   │   │   ├── RAIR777.json
+│   │   │   │   ├── RAIR_ERC721.json
+│   │   │   │   ├── RAIR_Token_Factory.json
+│   │   │   │   ├── Resale_Marketplace.json
+│   │   │   │   ├── diamondFactoryABI.json
+│   │   │   │   ├── diamondMarketplaceABI.json
+│   │   │   │   └── index.js
+│   │   │   ├── socket.io
+│   │   │   │   └── index.js
+│   │   │   ├── yoti
+│   │   │   │   └── hotdrops.pem
+│   │   │   └── zoom
+│   │   │       └── zoomController.js
+│   │   ├── middleware
+│   │   │   ├── consumeTokenCredit.js
+│   │   │   ├── dataTransform.js
+│   │   │   ├── formDataHandler.js
+│   │   │   ├── index.js
+│   │   │   ├── isAdmin.js
+│   │   │   ├── isOwner.js
+│   │   │   ├── streamVerification.js
+│   │   │   ├── validation.js
+│   │   │   ├── verifySuperAdmin.js
+│   │   │   └── verifyUserSession.js
+│   │   ├── models
+│   │   │   ├── blockchain.js
+│   │   │   ├── category.js
+│   │   │   ├── contract.js
+│   │   │   ├── customRoyaltiesSet.js
+│   │   │   ├── favoriteTokens.js
+│   │   │   ├── file.js
+│   │   │   ├── index.js
+│   │   │   ├── lockedTokens.js
+│   │   │   ├── mediaViewLog.js
+│   │   │   ├── mintedToken.js
+│   │   │   ├── notification.js
+│   │   │   ├── offer.js
+│   │   │   ├── offerPool.js
+│   │   │   ├── pastAddress.js
+│   │   │   ├── product.js
+│   │   │   ├── resaleTokenOffer.js
+│   │   │   ├── serverSettings.js
+│   │   │   ├── syncRestriction.js
+│   │   │   ├── task.js
+│   │   │   ├── tokenMetadata.js
+│   │   │   ├── transaction.js
+│   │   │   ├── unlock.js
+│   │   │   ├── user.js
+│   │   │   ├── userCredit.js
+│   │   │   ├── userCreditMovement.js
+│   │   │   ├── userValues.js
+│   │   │   └── versioning.js
+│   │   ├── mongooseConnect.js
+│   │   ├── routes
+│   │   │   ├── index.js
+│   │   │   ├── monaco2021.js
+│   │   │   └── stream.js
+│   │   ├── schemas
+│   │   │   ├── addMedia.js
+│   │   │   ├── admin.js
+│   │   │   ├── analytics.js
+│   │   │   ├── authentication.js
+│   │   │   ├── commonApiSchemas.js
+│   │   │   ├── createContract.js
+│   │   │   ├── createFavoriteToken.js
+│   │   │   ├── credits.js
+│   │   │   ├── databaseSchemas.js
+│   │   │   ├── files.js
+│   │   │   ├── filterAndSort.js
+│   │   │   ├── getChallenge.js
+│   │   │   ├── getChallengeV2.js
+│   │   │   ├── getFilesByNFT.js
+│   │   │   ├── getFilesByProduct.js
+│   │   │   ├── getLocksByProduct.js
+│   │   │   ├── getToken.js
+│   │   │   ├── getTokensByContractProduct.js
+│   │   │   ├── helpers.js
+│   │   │   ├── importContract.js
+│   │   │   ├── index.js
+│   │   │   ├── manageContract.js
+│   │   │   ├── nftContract.js
+│   │   │   ├── nftProduct.js
+│   │   │   ├── notifications.js
+│   │   │   ├── pinningMultiple.js
+│   │   │   ├── resales.js
+│   │   │   ├── reusableCustomTypes.js
+│   │   │   ├── search.js
+│   │   │   ├── singleContract.js
+│   │   │   ├── stream.js
+│   │   │   ├── textSearch.js
+│   │   │   ├── updateCommonTokenMetadata.js
+│   │   │   ├── updateContract.js
+│   │   │   ├── updateTokenMetadata.js
+│   │   │   ├── uploadVideo.js
+│   │   │   ├── uploadVideoFile.js
+│   │   │   ├── userRoutes.js
+│   │   │   ├── v2AuthSchemas.js
+│   │   │   ├── v2ContractSchemas.js
+│   │   │   ├── v2MediaFileSchemas.js
+│   │   │   ├── v2TokenSchemas.js
+│   │   │   └── withProductV2.js
+│   │   ├── seeds
+│   │   │   ├── categories.js
+│   │   │   ├── index.js
+│   │   │   └── syncRestrictions.js
+│   │   ├── services
+│   │   │   └── redis.js
+│   │   ├── shared_backend_code_generated
+│   │   │   ├── README.md
+│   │   │   ├── config
+│   │   │   │   ├── applicationConfig.js
+│   │   │   │   └── mongoConfig.js
+│   │   │   ├── integrations
+│   │   │   │   └── gcp
+│   │   │   │       └── index.js
+│   │   │   ├── mongo
+│   │   │   │   └── mongoUtils.js
+│   │   │   ├── utils
+│   │   │   │   └── helpers.js
+│   │   │   └── vault
+│   │   │       ├── README.md
+│   │   │       ├── appSecretManager.js
+│   │   │       ├── vaultAppRoleTokenManager.js
+│   │   │       ├── vaultKeyManager.js
+│   │   │       └── vaultUtils.js
+│   │   ├── stream-decrypter.js
+│   │   ├── templates
+│   │   │   └── stream.m3u8.template
+│   │   ├── utils
+│   │   │   ├── apiFeatures.js
+│   │   │   ├── corsValidation.js
+│   │   │   ├── entityFactory.js
+│   │   │   ├── errors
+│   │   │   │   ├── AppError.js
+│   │   │   │   ├── errorHandlers.js
+│   │   │   │   └── mainErrorHandler.js
+│   │   │   ├── ffmpegUtils.js
+│   │   │   ├── helpers.js
+│   │   │   ├── hls-server
+│   │   │   │   ├── httpProvider.js
+│   │   │   │   └── index.js
+│   │   │   ├── logger.js
+│   │   │   ├── loggerTransports
+│   │   │   │   └── sentryTransport.js
+│   │   │   ├── metadataClassify.js
+│   │   │   └── vaultSuperAdmin.js
+│   │   └── vault.js
+│   ├── commands
+│   │   └── start_rairnode_prod.sh
+│   ├── ofac-sanctioned-digital-currency-addresses
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   └── generate-address-list.py
+│   ├── package.json
+│   ├── scripts
+│   │   ├── cleanupDuplicateDB.js
+│   │   ├── dev
+│   │   │   ├── 1.24.0.mongo.js
+│   │   │   ├── 2.1.0.mongo.js
+│   │   │   ├── 2.11.0.mongo.js
+│   │   │   ├── 2.12.0.mongo.js
+│   │   │   ├── 2.13.0.mongo.js
+│   │   │   ├── 2.14.0.mongo.js
+│   │   │   ├── 2.15.0.mongo.js
+│   │   │   ├── 2.18.0.mongo.js
+│   │   │   ├── 2.20.0.mongo.js
+│   │   │   ├── 2.3.0.mongo.js
+│   │   │   ├── 2.4.0.mongo.js
+│   │   │   ├── 2.6.0.mongo.js
+│   │   │   ├── 2.7.0.mongo.js
+│   │   │   ├── 2.9.0.mongo.js
+│   │   │   ├── 2023.06.15.mongo.js
+│   │   │   └── 2023.08.04.mongo.js
+│   │   └── indexes.mongo.js
+│   └── tmp
+│       └── readme.txt
+├── docker-compose.local-new.yml
+├── docs
+│   ├── architecture.md
+│   ├── content.txt
+│   ├── local-development.md
+│   ├── protocol-spec.md
+│   └── smart-contracts.md
+├── event-worker
+│   ├── Dockerfile
+│   ├── Dockerfile.prod
+│   ├── README.md
+│   ├── VERSION
+│   ├── bin
+│   │   ├── config
+│   │   │   └── index.js
+│   │   ├── enums
+│   │   │   └── agenda-task.js
+│   │   ├── index.js
+│   │   ├── integrations
+│   │   │   ├── ethers
+│   │   │   │   ├── contracts
+│   │   │   │   │   ├── CreditHandlerABI.json
+│   │   │   │   │   ├── Minter_Marketplace.json
+│   │   │   │   │   ├── RAIR777.json
+│   │   │   │   │   ├── RAIR_ERC721.json
+│   │   │   │   │   ├── RAIR_Token_Factory.json
+│   │   │   │   │   ├── classicDeprecatedEvents.json
+│   │   │   │   │   ├── diamondDeprecatedEvents.json
+│   │   │   │   │   ├── diamondFactoryABI.json
+│   │   │   │   │   ├── diamondMarketplaceABI.json
+│   │   │   │   │   └── index.js
+│   │   │   │   └── transactionCatcher.js
+│   │   │   └── ipfsService
+│   │   │       ├── index.js
+│   │   │       ├── ipfs.js
+│   │   │       └── pinata.js
+│   │   ├── middleware
+│   │   │   └── verification.js
+│   │   ├── models
+│   │   │   ├── blockchain.js
+│   │   │   ├── category.js
+│   │   │   ├── contract.js
+│   │   │   ├── customRoyaltiesSet.js
+│   │   │   ├── favoriteTokens.js
+│   │   │   ├── file.js
+│   │   │   ├── index.js
+│   │   │   ├── lockedTokens.js
+│   │   │   ├── mediaViewLog.js
+│   │   │   ├── mintedToken.js
+│   │   │   ├── offer.js
+│   │   │   ├── offerPool.js
+│   │   │   ├── pastAddress.js
+│   │   │   ├── product.js
+│   │   │   ├── resaleTokenOffer.js
+│   │   │   ├── syncRestriction.js
+│   │   │   ├── task.js
+│   │   │   ├── transaction.js
+│   │   │   ├── unlock.js
+│   │   │   ├── user.js
+│   │   │   ├── userCredit.js
+│   │   │   ├── userCreditMovement.js
+│   │   │   └── versioning.js
+│   │   ├── routes
+│   │   │   └── api
+│   │   │       └── v1
+│   │   │           ├── index.js
+│   │   │           └── transactions.js
+│   │   ├── services
+│   │   │   └── redis.js
+│   │   ├── shared_backend_code_generated
+│   │   │   ├── README.md
+│   │   │   ├── config
+│   │   │   │   ├── applicationConfig.js
+│   │   │   │   └── mongoConfig.js
+│   │   │   ├── integrations
+│   │   │   │   └── gcp
+│   │   │   │       └── index.js
+│   │   │   ├── mongo
+│   │   │   │   └── mongoUtils.js
+│   │   │   ├── utils
+│   │   │   │   └── helpers.js
+│   │   │   └── vault
+│   │   │       ├── README.md
+│   │   │       ├── appSecretManager.js
+│   │   │       ├── vaultAppRoleTokenManager.js
+│   │   │       ├── vaultKeyManager.js
+│   │   │       └── vaultUtils.js
+│   │   ├── tasks
+│   │   │   ├── index.js
+│   │   │   ├── sync-all-721-logs.js
+│   │   │   ├── sync-all-diamond-721-logs.js
+│   │   │   ├── sync-contracts.js
+│   │   │   └── sync.js
+│   │   ├── utils
+│   │   │   ├── agenda_action_logger.js
+│   │   │   ├── alchemySdk.js
+│   │   │   ├── etherProvider.js
+│   │   │   ├── eventCatcherMapping.js
+│   │   │   ├── eventCatcherUtils
+│   │   │   │   ├── createResaleOffer.js
+│   │   │   │   ├── deleteResaleOffer.js
+│   │   │   │   ├── depositCredits.js
+│   │   │   │   ├── eventsCommonUtils.js
+│   │   │   │   ├── index.js
+│   │   │   │   ├── insertCollection.js
+│   │   │   │   ├── insertContract.js
+│   │   │   │   ├── insertDiamondOffer.js
+│   │   │   │   ├── insertDiamondRange.js
+│   │   │   │   ├── insertOffer.js
+│   │   │   │   ├── insertOfferPool.js
+│   │   │   │   ├── insertTokenClassic.js
+│   │   │   │   ├── insertTokenDiamond.js
+│   │   │   │   ├── metadataForContract.js
+│   │   │   │   ├── metadataForProduct.js
+│   │   │   │   ├── metadataForToken.js
+│   │   │   │   ├── sellResaleOffer.js
+│   │   │   │   ├── transferredToken.js
+│   │   │   │   ├── updateDiamondRange.js
+│   │   │   │   ├── updateMintingOffer.js
+│   │   │   │   ├── updateOfferClassic.js
+│   │   │   │   ├── updateResaleOffer.js
+│   │   │   │   └── witdrawCredits.js
+│   │   │   ├── helpers.js
+│   │   │   ├── logUtils.js
+│   │   │   ├── logger.js
+│   │   │   ├── loggerTransports
+│   │   │   │   └── sentryTransport.js
+│   │   │   └── reusableTransactionHandler.js
+│   │   └── vault.js
+│   ├── commands
+│   │   └── start_blockchain_networks_prod.sh
+│   └── package.json
+├── media-transcoder
+│   ├── Dockerfile
+│   ├── Dockerfile.prod
+│   ├── README.md
+│   ├── bin
+│   │   ├── Multer
+│   │   │   └── Config.js
+│   │   ├── api
+│   │   │   └── upload
+│   │   │       ├── upload.controller.js
+│   │   │       └── upload.service.js
+│   │   ├── config
+│   │   │   └── index.js
+│   │   ├── index.js
+│   │   ├── integrations
+│   │   │   ├── gcp
+│   │   │   │   └── index.js
+│   │   │   └── ipfsService
+│   │   │       ├── index.js
+│   │   │       └── pinata.js
+│   │   ├── middleware
+│   │   │   ├── formDataHandler.js
+│   │   │   ├── index.js
+│   │   │   ├── validation.js
+│   │   │   └── verification.js
+│   │   ├── schemas
+│   │   │   ├── index.js
+│   │   │   ├── uploadVideo.js
+│   │   │   └── uploadVideoFile.js
+│   │   ├── services
+│   │   │   └── redis.js
+│   │   ├── shared_backend_code_generated
+│   │   │   ├── README.md
+│   │   │   ├── config
+│   │   │   │   ├── applicationConfig.js
+│   │   │   │   └── mongoConfig.js
+│   │   │   ├── integrations
+│   │   │   │   └── gcp
+│   │   │   │       └── index.js
+│   │   │   ├── mongo
+│   │   │   │   └── mongoUtils.js
+│   │   │   ├── utils
+│   │   │   │   └── helpers.js
+│   │   │   └── vault
+│   │   │       ├── README.md
+│   │   │       ├── appSecretManager.js
+│   │   │       ├── vaultAppRoleTokenManager.js
+│   │   │       ├── vaultKeyManager.js
+│   │   │       └── vaultUtils.js
+│   │   ├── templates
+│   │   │   └── stream.m3u8.template
+│   │   ├── utils
+│   │   │   ├── errors
+│   │   │   │   ├── AppError.js
+│   │   │   │   ├── errorHandlers.js
+│   │   │   │   └── mainErrorHandler.js
+│   │   │   ├── ffmpegUtils.js
+│   │   │   ├── helpers.js
+│   │   │   ├── logger.js
+│   │   │   └── loggerTransports
+│   │   │       └── sentryTransport.js
+│   │   ├── vault.js
+│   │   └── videoConfig
+│   │       └── index.js
+│   ├── commands
+│   │   └── start_prod.sh
+│   ├── eslint.config.mjs
+│   ├── package-lock.json
+│   ├── package.json
+│   └── readme
+│       └── upload_media.md
+└── smart-contracts
+    ├── contracts
+    │   ├── Factory
+    │   │   ├── AccessControlRoles.sol
+    │   │   ├── AppStorage.sol
+    │   │   ├── FacetSource.sol
+    │   │   ├── FactoryDiamond.sol
+    │   │   └── facets
+    │   │       ├── DeployerFacet.sol
+    │   │       ├── DepositLogic.sol
+    │   │       ├── QueryingLogic.sol
+    │   │       ├── TokensFacet.sol
+    │   │       ├── WithdrawLogic.sol
+    │   │       └── creatorsFacet.sol
+    │   ├── Marketplace
+    │   │   ├── AppStorage.sol
+    │   │   ├── Facets
+    │   │   │   ├── FeesFacet.sol
+    │   │   │   ├── MintingOffersFacet.sol
+    │   │   │   ├── MultiSend.sol
+    │   │   │   └── ResalesFacet.sol
+    │   │   ├── MarketplaceDiamond.sol
+    │   │   └── Storage
+    │   │       └── ResaleStorage.sol
+    │   ├── common
+    │   │   ├── AccessControl.sol
+    │   │   ├── DiamondStorage
+    │   │   │   ├── AccessControlEnumerable.sol
+    │   │   │   └── AccessControlEnumerableStorage.sol
+    │   │   └── SignedHashProtection.sol
+    │   ├── diamondStandard
+    │   │   ├── Diamond.sol
+    │   │   ├── facets
+    │   │   │   ├── DiamondCutFacet.sol
+    │   │   │   ├── DiamondLoupeFacet.sol
+    │   │   │   ├── OwnershipFacet.sol
+    │   │   │   ├── Test1Facet.sol
+    │   │   │   └── Test2Facet.sol
+    │   │   ├── interfaces
+    │   │   │   ├── IDiamondCut.sol
+    │   │   │   ├── IDiamondLoupe.sol
+    │   │   │   ├── IERC165.sol
+    │   │   │   └── IERC173.sol
+    │   │   ├── libraries
+    │   │   │   └── LibDiamond.sol
+    │   │   └── upgradeInitializers
+    │   │       └── DiamondInit.sol
+    │   ├── exchange
+    │   │   └── ERC20Exchange.sol
+    │   ├── interfaces
+    │   │   └── IERC165.sol
+    │   ├── maliciousContracts
+    │   │   ├── receiveEthAttacker.sol
+    │   │   └── receiveEthTest.sol
+    │   └── tokens
+    │       ├── IERC2981.sol
+    │       ├── RAIR-721
+    │       │   ├── AccessControlRoles.sol
+    │       │   ├── AppStorage.sol
+    │       │   ├── Facets
+    │       │   │   ├── ERC721EnumerableFacet.sol
+    │       │   │   ├── ERC721Facet.sol
+    │       │   │   ├── ProductFacet.sol
+    │       │   │   ├── RAIRMetadataFacet.sol
+    │       │   │   ├── RangesFacet.sol
+    │       │   │   └── RoyaltiesFacet.sol
+    │       │   └── RAIR-ERC721.sol
+    │       └── RAIR-ERC20.sol
+    ├── deployment-scripts
+    │   ├── 1.Facets.js
+    │   ├── 721Exchange.js
+    │   ├── DiamondFactory.js
+    │   ├── DiamondMarketplace.js
+    │   ├── ERC20.js
+    │   └── FacetSource.js
+    ├── hardhat.config.js
+    ├── package.json
+    ├── test
+    │   └── diamonds.js
+    └── utilities
+        ├── deployAndVerify.js
+        └── diamondUtils.js
+
+406 directories, 1327 files

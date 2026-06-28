@@ -1,62 +1,46 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.25; 
+pragma solidity 0.8.35;
 
-library ERC721Storage {
-    bytes32 internal constant STORAGE_SLOT =
-        keccak256('rair.contracts.storage.RAIR721');
+library RAIR721Storage {
+    bytes32 internal constant STORAGE_SLOT = keccak256("rair.contracts.storage.RAIR721");
 
-    struct product {
-        uint startingToken;
-        uint endingToken;
-        uint mintableTokens;
+    struct Product {
+        uint256 startingToken;
+        uint256 endingToken;
+        uint256 mintableTokens;
         string name;
-        uint[] rangeList;
+        uint256[] rangeList;
     }
 
-    struct range {
-        uint rangeStart;
-        uint rangeEnd;
-        uint tokensAllowed;
-        uint mintableTokens;
-        uint lockedTokens;
-        uint rangePrice;
+    struct Range {
+        uint256 rangeStart;
+        uint256 rangeEnd;
+        uint256 tokensAllowed;
+        uint256 mintableTokens;
+        uint256 lockedTokens;
+        uint256 rangePrice;
         string rangeName;
     }
 
     struct Layout {
-        // Base ERC721
-        string _name;
-        string _symbol;
-        mapping(uint256 tokenId => address) _owners;
-        mapping(address owner => uint256) _balances;
-        mapping(uint256 tokenId => address) _tokenApprovals;
-        mapping(address owner => mapping(address operator => bool)) _operatorApprovals;
-        // ERC721 enumerable extension
-        mapping(address owner => mapping(uint256 index => uint256)) _ownedTokens;
-        mapping(uint256 tokenId => uint256) _ownedTokensIndex;
-        uint256[] _allTokens;
-        mapping(uint256 tokenId => uint256) _allTokensIndex;
-        // RAIR exclusive
         string baseURI;
         address factoryAddress;
         uint16 royaltyFee;
-        product[] products;
-        range[] ranges;
-        mapping(uint => uint) tokenToProduct;
-        mapping(uint => uint) tokenToRange;
-        mapping(uint => string) uniqueTokenURI;
-        mapping(uint => string) productURI;
-        mapping(uint => bool) appendTokenIndexToProductURI;
+        Product[] products;
+        Range[] ranges;
+        mapping(uint256 => uint256) tokenToProduct;
+        mapping(uint256 => uint256) tokenToRange;
+        mapping(uint256 => string) uniqueTokenURI;
+        mapping(uint256 => string) productURI;
+        mapping(uint256 => bool) appendTokenIndexToProductURI;
         bool appendTokenIndexToBaseURI;
-        mapping(uint => uint[]) tokensByProduct;
+        mapping(uint256 => uint256[]) tokensByProduct;
         string contractMetadataURI;
-        mapping(uint => uint) rangeToProduct;
-        mapping(uint => bool) _minted;
-        // August 2022 - Metadata File Extension Update
-        mapping(uint => string) rangeURI;
-        mapping(uint => bool) appendTokenIndexToRangeURI;
+        mapping(uint256 => uint256) rangeToProduct;
+        mapping(uint256 => bool) _minted;
+        mapping(uint256 => string) rangeURI;
+        mapping(uint256 => bool) appendTokenIndexToRangeURI;
         string _metadataExtension;
-        // March 2024 - Optional trader role
         bool requiresTrader;
     }
 

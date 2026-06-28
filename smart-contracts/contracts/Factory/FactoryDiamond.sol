@@ -1,20 +1,28 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.25; 
+pragma solidity 0.8.35; 
 
-// Parent classes
-import { Diamond } from '../diamondStandard/Diamond.sol';
+import { SolidstateDiamondProxy } from "@solidstate/contracts/proxy/diamond/SolidstateDiamondProxy.sol";
 import { AccessControlEnumerable } from "../common/DiamondStorage/AccessControlEnumerable.sol";
-import { FactoryHandlerRoles } from './AccessControlRoles.sol';
+import { FactoryHandlerRoles } from "./AccessControlRoles.sol";
+import { Context } from "@openzeppelin/contracts/utils/Context.sol";
+import { _Context } from "@solidstate/contracts/meta/_Context.sol";
+import { _Ownable } from "@solidstate/contracts/access/ownable/_Ownable.sol";
 
-/// @title  RAIR ERC721 Factory
-/// @notice Handles the deployment of ERC721 RAIR Tokens
-/// @author Juan M. Sanchez M.
-contract FactoryDiamond is Diamond, AccessControlEnumerable, FactoryHandlerRoles {
-	constructor(address _diamondCut) Diamond(msg.sender, _diamondCut) {
-		_setRoleAdmin(ADMINISTRATOR, ADMINISTRATOR);
-		_setRoleAdmin(WITHDRAW_SIGNER, ADMINISTRATOR);
-		_grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
-		_grantRole(ADMINISTRATOR, msg.sender);
-		_grantRole(WITHDRAW_SIGNER, msg.sender);
-	}
+contract FactoryDiamond is SolidstateDiamondProxy, AccessControlEnumerable, FactoryHandlerRoles, _Ownable {
+    constructor() {
+        _setOwner(msg.sender);
+        _setRoleAdmin(ADMINISTRATOR, ADMINISTRATOR);
+        _setRoleAdmin(WITHDRAW_SIGNER, ADMINISTRATOR);
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _grantRole(ADMINISTRATOR, msg.sender);
+        _grantRole(WITHDRAW_SIGNER, msg.sender);
+    }
+
+    function _msgSender() internal view virtual override(Context, _Context) returns (address) {
+        return msg.sender;
+    }
+
+    function _msgData() internal view virtual override(Context, _Context) returns (bytes calldata) {
+        return msg.data;
+    }
 }

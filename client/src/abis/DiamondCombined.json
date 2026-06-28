@@ -2667,415 +2667,93 @@
       "type": "function"
     },
     {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_initializationContractAddress",
-          "type": "address"
-        },
-        {
-          "internalType": "bytes",
-          "name": "_calldata",
-          "type": "bytes"
-        }
-      ],
-      "name": "InitializationFunctionReverted",
+      "inputs": [],
+      "name": "Address__NotContract",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "EnumerableMap__IndexOutOfBounds",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "EnumerableMap__NonExistentKey",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "EnumerableSet__IndexOutOfBounds",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Introspectable__InvalidInterfaceId",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NonFungibleToken__BalanceQueryZeroAddress",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NonFungibleToken__ERC721ReceiverNotImplemented",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NonFungibleToken__InvalidOwner",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NonFungibleToken__MintToZeroAddress",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NonFungibleToken__NonExistentToken",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NonFungibleToken__NotOwnerOrApproved",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NonFungibleToken__NotTokenOwner",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NonFungibleToken__SelfApproval",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NonFungibleToken__TokenAlreadyMinted",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NonFungibleToken__TransferToZeroAddress",
       "type": "error"
     },
     {
       "anonymous": false,
       "inputs": [
         {
-          "components": [
-            {
-              "internalType": "address",
-              "name": "facetAddress",
-              "type": "address"
-            },
-            {
-              "internalType": "enum IDiamondCut.FacetCutAction",
-              "name": "action",
-              "type": "uint8"
-            },
-            {
-              "internalType": "bytes4[]",
-              "name": "functionSelectors",
-              "type": "bytes4[]"
-            }
-          ],
-          "indexed": false,
-          "internalType": "struct IDiamondCut.FacetCut[]",
-          "name": "_diamondCut",
-          "type": "tuple[]"
-        },
-        {
-          "indexed": false,
-          "internalType": "address",
-          "name": "_init",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "bytes",
-          "name": "_calldata",
-          "type": "bytes"
-        }
-      ],
-      "name": "DiamondCut",
-      "type": "event"
-    },
-    {
-      "inputs": [
-        {
-          "components": [
-            {
-              "internalType": "address",
-              "name": "facetAddress",
-              "type": "address"
-            },
-            {
-              "internalType": "enum IDiamondCut.FacetCutAction",
-              "name": "action",
-              "type": "uint8"
-            },
-            {
-              "internalType": "bytes4[]",
-              "name": "functionSelectors",
-              "type": "bytes4[]"
-            }
-          ],
-          "internalType": "struct IDiamondCut.FacetCut[]",
-          "name": "_diamondCut",
-          "type": "tuple[]"
-        },
-        {
-          "internalType": "address",
-          "name": "_init",
-          "type": "address"
-        },
-        {
-          "internalType": "bytes",
-          "name": "_calldata",
-          "type": "bytes"
-        }
-      ],
-      "name": "diamondCut",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes4",
-          "name": "_functionSelector",
-          "type": "bytes4"
-        }
-      ],
-      "name": "facetAddress",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "facetAddress_",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "facetAddresses",
-      "outputs": [
-        {
-          "internalType": "address[]",
-          "name": "facetAddresses_",
-          "type": "address[]"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_facet",
-          "type": "address"
-        }
-      ],
-      "name": "facetFunctionSelectors",
-      "outputs": [
-        {
-          "internalType": "bytes4[]",
-          "name": "_facetFunctionSelectors",
-          "type": "bytes4[]"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "facets",
-      "outputs": [
-        {
-          "components": [
-            {
-              "internalType": "address",
-              "name": "facetAddress",
-              "type": "address"
-            },
-            {
-              "internalType": "bytes4[]",
-              "name": "functionSelectors",
-              "type": "bytes4[]"
-            }
-          ],
-          "internalType": "struct IDiamondLoupe.Facet[]",
-          "name": "facets_",
-          "type": "tuple[]"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes4",
-          "name": "_interfaceId",
-          "type": "bytes4"
-        }
-      ],
-      "name": "supportsInterface",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
           "indexed": true,
-          "internalType": "address",
-          "name": "previousOwner",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "newOwner",
-          "type": "address"
-        }
-      ],
-      "name": "OwnershipTransferred",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "previousOwner",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "newOwner",
-          "type": "address"
-        }
-      ],
-      "name": "OwnershipTransferred",
-      "type": "event"
-    },
-    {
-      "inputs": [],
-      "name": "owner",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "owner_",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_newOwner",
-          "type": "address"
-        }
-      ],
-      "name": "transferOwnership",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "ERC721EnumerableForbiddenBatchMint",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "sender",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "tokenId",
-          "type": "uint256"
-        },
-        {
           "internalType": "address",
           "name": "owner",
           "type": "address"
-        }
-      ],
-      "name": "ERC721IncorrectOwner",
-      "type": "error"
-    },
-    {
-      "inputs": [
+        },
         {
+          "indexed": true,
           "internalType": "address",
           "name": "operator",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "tokenId",
-          "type": "uint256"
-        }
-      ],
-      "name": "ERC721InsufficientApproval",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "approver",
-          "type": "address"
-        }
-      ],
-      "name": "ERC721InvalidApprover",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "operator",
-          "type": "address"
-        }
-      ],
-      "name": "ERC721InvalidOperator",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "owner",
-          "type": "address"
-        }
-      ],
-      "name": "ERC721InvalidOwner",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "receiver",
-          "type": "address"
-        }
-      ],
-      "name": "ERC721InvalidReceiver",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "sender",
-          "type": "address"
-        }
-      ],
-      "name": "ERC721InvalidSender",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "tokenId",
-          "type": "uint256"
-        }
-      ],
-      "name": "ERC721NonexistentToken",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "owner",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "index",
-          "type": "uint256"
-        }
-      ],
-      "name": "ERC721OutOfBoundsIndex",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "value",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "length",
-          "type": "uint256"
-        }
-      ],
-      "name": "StringsInsufficientHexLength",
-      "type": "error"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "owner",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "approved",
           "type": "address"
         },
         {
@@ -3118,138 +2796,6 @@
       "inputs": [
         {
           "indexed": true,
-          "internalType": "uint256",
-          "name": "productIndex",
-          "type": "uint256"
-        }
-      ],
-      "name": "ProductCompleted",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "uint256",
-          "name": "rangeIndex",
-          "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "productIndex",
-          "type": "uint256"
-        }
-      ],
-      "name": "RangeCompleted",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "bytes32",
-          "name": "role",
-          "type": "bytes32"
-        },
-        {
-          "indexed": true,
-          "internalType": "bytes32",
-          "name": "previousAdminRole",
-          "type": "bytes32"
-        },
-        {
-          "indexed": true,
-          "internalType": "bytes32",
-          "name": "newAdminRole",
-          "type": "bytes32"
-        }
-      ],
-      "name": "RoleAdminChanged",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "bytes32",
-          "name": "role",
-          "type": "bytes32"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "sender",
-          "type": "address"
-        }
-      ],
-      "name": "RoleGranted",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "bytes32",
-          "name": "role",
-          "type": "bytes32"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "sender",
-          "type": "address"
-        }
-      ],
-      "name": "RoleRevoked",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "uint256",
-          "name": "rangeIndex",
-          "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "from",
-          "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "to",
-          "type": "uint256"
-        }
-      ],
-      "name": "TradingUnlocked",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
           "internalType": "address",
           "name": "from",
           "type": "address"
@@ -3271,49 +2817,10 @@
       "type": "event"
     },
     {
-      "inputs": [],
-      "name": "CREATOR",
-      "outputs": [
-        {
-          "internalType": "bytes32",
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "MINTER",
-      "outputs": [
-        {
-          "internalType": "bytes32",
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "TRADER",
-      "outputs": [
-        {
-          "internalType": "bytes32",
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
       "inputs": [
         {
           "internalType": "address",
-          "name": "to",
+          "name": "operator",
           "type": "address"
         },
         {
@@ -3324,14 +2831,14 @@
       ],
       "name": "approve",
       "outputs": [],
-      "stateMutability": "nonpayable",
+      "stateMutability": "payable",
       "type": "function"
     },
     {
       "inputs": [
         {
           "internalType": "address",
-          "name": "owner",
+          "name": "account",
           "type": "address"
         }
       ],
@@ -3369,7 +2876,7 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "owner",
+          "name": "account",
           "type": "address"
         },
         {
@@ -3384,84 +2891,6 @@
           "internalType": "bool",
           "name": "",
           "type": "bool"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "to",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "rangeId",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "indexInRange",
-          "type": "uint256"
-        }
-      ],
-      "name": "mintFromRange",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address[]",
-          "name": "to",
-          "type": "address[]"
-        },
-        {
-          "internalType": "uint256",
-          "name": "rangeId",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256[]",
-          "name": "indexInRange",
-          "type": "uint256[]"
-        }
-      ],
-      "name": "mintFromRangeBatch",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "name",
-      "outputs": [
-        {
-          "internalType": "string",
-          "name": "",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "rangeIndex",
-          "type": "uint256"
-        }
-      ],
-      "name": "nextMintableTokenInRange",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "index",
-          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -3506,7 +2935,7 @@
       ],
       "name": "safeTransferFrom",
       "outputs": [],
-      "stateMutability": "nonpayable",
+      "stateMutability": "payable",
       "type": "function"
     },
     {
@@ -3534,7 +2963,7 @@
       ],
       "name": "safeTransferFrom",
       "outputs": [],
-      "stateMutability": "nonpayable",
+      "stateMutability": "payable",
       "type": "function"
     },
     {
@@ -3546,7 +2975,7 @@
         },
         {
           "internalType": "bool",
-          "name": "approved",
+          "name": "status",
           "type": "bool"
         }
       ],
@@ -3556,13 +2985,19 @@
       "type": "function"
     },
     {
-      "inputs": [],
-      "name": "symbol",
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "interfaceId",
+          "type": "bytes4"
+        }
+      ],
+      "name": "supportsInterface",
       "outputs": [
         {
-          "internalType": "string",
+          "internalType": "bool",
           "name": "",
-          "type": "string"
+          "type": "bool"
         }
       ],
       "stateMutability": "view",
@@ -3612,25 +3047,6 @@
       "type": "function"
     },
     {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "tokenId",
-          "type": "uint256"
-        }
-      ],
-      "name": "tokenURI",
-      "outputs": [
-        {
-          "internalType": "string",
-          "name": "",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
       "inputs": [],
       "name": "totalSupply",
       "outputs": [
@@ -3663,8 +3079,41 @@
       ],
       "name": "transferFrom",
       "outputs": [],
-      "stateMutability": "nonpayable",
+      "stateMutability": "payable",
       "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "collectionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "CollectionDoesNotExist",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "collectionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "NoTokensAvailable",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "rangeId",
+          "type": "uint256"
+        }
+      ],
+      "name": "RangeDoesNotExist",
+      "type": "error"
     },
     {
       "inputs": [
@@ -3680,6 +3129,17 @@
         }
       ],
       "name": "StringsInsufficientHexLength",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "TokenDoesNotExist",
       "type": "error"
     },
     {
@@ -3789,15 +3249,54 @@
       "type": "event"
     },
     {
+      "inputs": [],
+      "name": "CREATOR",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MINTER",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "TRADER",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
           "internalType": "string",
-          "name": "_productName",
+          "name": "productName",
           "type": "string"
         },
         {
           "internalType": "uint256",
-          "name": "_copies",
+          "name": "copies",
           "type": "uint256"
         }
       ],
@@ -3828,7 +3327,7 @@
       "outputs": [
         {
           "internalType": "uint256",
-          "name": "nextIndex",
+          "name": "",
           "type": "uint256"
         }
       ],
@@ -3852,7 +3351,7 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "productIndex_",
+          "name": "productIndex",
           "type": "uint256"
         }
       ],
@@ -3886,7 +3385,7 @@
               "type": "uint256[]"
             }
           ],
-          "internalType": "struct ERC721Storage.product",
+          "internalType": "struct RAIR721Storage.Product",
           "name": "",
           "type": "tuple"
         }
@@ -3940,7 +3439,7 @@
       "outputs": [
         {
           "internalType": "uint256",
-          "name": "length",
+          "name": "",
           "type": "uint256"
         }
       ],
@@ -3999,12 +3498,12 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "productIndex_",
+          "name": "productIndex",
           "type": "uint256"
         },
         {
           "internalType": "uint256",
-          "name": "tokenIndex_",
+          "name": "tokenIndex",
           "type": "uint256"
         }
       ],
@@ -4023,12 +3522,12 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "productIndex_",
+          "name": "productIndex",
           "type": "uint256"
         },
         {
           "internalType": "uint256",
-          "name": "tokenIndex_",
+          "name": "tokenIndex",
           "type": "uint256"
         }
       ],
@@ -4047,7 +3546,7 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "tokenIndex_",
+          "name": "tokenId",
           "type": "uint256"
         }
       ],
@@ -4071,7 +3570,7 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "tokenIndex_",
+          "name": "tokenId",
           "type": "uint256"
         }
       ],
@@ -4101,25 +3600,6 @@
       ],
       "name": "StringsInsufficientHexLength",
       "type": "error"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "internalType": "string",
-          "name": "_value",
-          "type": "string"
-        },
-        {
-          "indexed": true,
-          "internalType": "uint256",
-          "name": "_id",
-          "type": "uint256"
-        }
-      ],
-      "name": "PermanentURI",
-      "type": "event"
     },
     {
       "anonymous": false,
@@ -4197,229 +3677,92 @@
       "type": "event"
     },
     {
-      "anonymous": false,
-      "inputs": [
+      "inputs": [],
+      "name": "royaltyFee",
+      "outputs": [
         {
-          "indexed": false,
-          "internalType": "string",
-          "name": "newURI",
-          "type": "string"
-        },
-        {
-          "indexed": false,
-          "internalType": "bool",
-          "name": "appendTokenIndex",
-          "type": "bool"
-        },
-        {
-          "indexed": false,
-          "internalType": "string",
-          "name": "metadataExtension",
-          "type": "string"
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
         }
       ],
-      "name": "UpdatedBaseURI",
-      "type": "event"
+      "stateMutability": "view",
+      "type": "function"
     },
     {
-      "anonymous": false,
       "inputs": [
         {
-          "indexed": false,
-          "internalType": "string",
-          "name": "newURI",
-          "type": "string"
-        }
-      ],
-      "name": "UpdatedContractURI",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "productId",
-          "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "internalType": "string",
-          "name": "newURI",
-          "type": "string"
-        },
-        {
-          "indexed": false,
-          "internalType": "bool",
-          "name": "appendTokenIndex",
-          "type": "bool"
-        },
-        {
-          "indexed": false,
-          "internalType": "string",
-          "name": "metadataExtension",
-          "type": "string"
-        }
-      ],
-      "name": "UpdatedProductURI",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "rangeId",
-          "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "internalType": "string",
-          "name": "newURI",
-          "type": "string"
-        },
-        {
-          "indexed": false,
-          "internalType": "bool",
-          "name": "appendTokenIndex",
-          "type": "bool"
-        },
-        {
-          "indexed": false,
-          "internalType": "string",
-          "name": "metadataExtension",
-          "type": "string"
-        }
-      ],
-      "name": "UpdatedRangeURI",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
           "internalType": "uint256",
           "name": "tokenId",
           "type": "uint256"
         },
         {
-          "indexed": false,
-          "internalType": "string",
-          "name": "newURI",
-          "type": "string"
+          "internalType": "uint256",
+          "name": "salePrice",
+          "type": "uint256"
         }
       ],
-      "name": "UpdatedTokenURI",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
+      "name": "royaltyInfo",
+      "outputs": [
         {
-          "indexed": false,
-          "internalType": "string",
-          "name": "newExtension",
-          "type": "string"
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         }
       ],
-      "name": "UpdatedURIExtension",
-      "type": "event"
+      "stateMutability": "view",
+      "type": "function"
     },
     {
       "inputs": [],
-      "name": "contractURI",
-      "outputs": [
-        {
-          "internalType": "string",
-          "name": "",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
+      "name": "AllowedTokensExceedMintable",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "AllowedTokensExceedRangeLength",
+      "type": "error"
     },
     {
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "tokenId",
+          "name": "collectionId",
           "type": "uint256"
         }
       ],
-      "name": "freezeMetadata",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
+      "name": "CollectionDoesNotExist",
+      "type": "error"
     },
     {
-      "inputs": [
-        {
-          "internalType": "string",
-          "name": "newURI",
-          "type": "string"
-        },
-        {
-          "internalType": "bool",
-          "name": "appendTokenIndexToBaseURI",
-          "type": "bool"
-        }
-      ],
-      "name": "setBaseURI",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
+      "inputs": [],
+      "name": "EmptyArray",
+      "type": "error"
     },
     {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "productId",
-          "type": "uint256"
-        },
-        {
-          "internalType": "string",
-          "name": "newURI",
-          "type": "string"
-        },
-        {
-          "internalType": "bool",
-          "name": "appendTokenIndexToProductURI",
-          "type": "bool"
-        }
-      ],
-      "name": "setCollectionURI",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
+      "inputs": [],
+      "name": "InvalidMinimumPrice",
+      "type": "error"
     },
     {
-      "inputs": [
-        {
-          "internalType": "string",
-          "name": "newURI",
-          "type": "string"
-        }
-      ],
-      "name": "setContractURI",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
+      "inputs": [],
+      "name": "InvalidRangeIndex",
+      "type": "error"
     },
     {
-      "inputs": [
-        {
-          "internalType": "string",
-          "name": "extension",
-          "type": "string"
-        }
-      ],
-      "name": "setMetadataExtension",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
+      "inputs": [],
+      "name": "LockedTokensExceedMintable",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "LockedTokensExceedRangeLength",
+      "type": "error"
     },
     {
       "inputs": [
@@ -4427,77 +3770,15 @@
           "internalType": "uint256",
           "name": "rangeId",
           "type": "uint256"
-        },
-        {
-          "internalType": "string",
-          "name": "newURI",
-          "type": "string"
-        },
-        {
-          "internalType": "bool",
-          "name": "appendTokenIndex",
-          "type": "bool"
         }
       ],
-      "name": "setRangeURI",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
+      "name": "RangeDoesNotExist",
+      "type": "error"
     },
     {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "tokenId",
-          "type": "uint256"
-        },
-        {
-          "internalType": "string",
-          "name": "newURI",
-          "type": "string"
-        }
-      ],
-      "name": "setUniqueURI",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256[]",
-          "name": "tokenIds",
-          "type": "uint256[]"
-        },
-        {
-          "internalType": "string[]",
-          "name": "newURIs",
-          "type": "string[]"
-        }
-      ],
-      "name": "setUniqueURIBatch",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "token",
-          "type": "uint256"
-        }
-      ],
-      "name": "tokenToCollectionIndex",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "tokenIndex",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
+      "inputs": [],
+      "name": "RangeExceedsCollectionLimits",
+      "type": "error"
     },
     {
       "inputs": [
@@ -4651,7 +3932,7 @@
         {
           "indexed": true,
           "internalType": "uint256",
-          "name": "rangeIndex",
+          "name": "rangeId",
           "type": "uint256"
         },
         {
@@ -4682,7 +3963,7 @@
         {
           "indexed": true,
           "internalType": "uint256",
-          "name": "rangeIndex",
+          "name": "rangeId",
           "type": "uint256"
         },
         {
@@ -4707,7 +3988,7 @@
         {
           "indexed": false,
           "internalType": "uint256",
-          "name": "rangeIndex",
+          "name": "rangeId",
           "type": "uint256"
         },
         {
@@ -4742,17 +4023,17 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "productId_",
+          "name": "productId",
           "type": "uint256"
         },
         {
           "internalType": "uint256",
-          "name": "rangeStart_",
+          "name": "rangeStart",
           "type": "uint256"
         },
         {
           "internalType": "uint256",
-          "name": "rangeEnd_",
+          "name": "rangeEnd",
           "type": "uint256"
         }
       ],
@@ -4840,7 +4121,7 @@
               "type": "string"
             }
           ],
-          "internalType": "struct RAIRRangesFacet.rangeData[]",
+          "internalType": "struct RAIRRangesFacet.RangeData[]",
           "name": "data",
           "type": "tuple[]"
         }
@@ -4922,7 +4203,7 @@
               "type": "string"
             }
           ],
-          "internalType": "struct ERC721Storage.range",
+          "internalType": "struct RAIR721Storage.Range",
           "name": "data",
           "type": "tuple"
         }
@@ -4978,7 +4259,7 @@
               "type": "string"
             }
           ],
-          "internalType": "struct ERC721Storage.range",
+          "internalType": "struct RAIR721Storage.Range",
           "name": "data",
           "type": "tuple"
         },
@@ -4995,7 +4276,7 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "rangeIndex_",
+          "name": "rangeId",
           "type": "uint256"
         }
       ],
@@ -5024,17 +4305,17 @@
         },
         {
           "internalType": "uint256",
-          "name": "price_",
+          "name": "price",
           "type": "uint256"
         },
         {
           "internalType": "uint256",
-          "name": "tokensAllowed_",
+          "name": "tokensAllowed",
           "type": "uint256"
         },
         {
           "internalType": "uint256",
-          "name": "lockedTokens_",
+          "name": "lockedTokens",
           "type": "uint256"
         }
       ],
@@ -5042,70 +4323,6 @@
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "numerator",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "denominator",
-          "type": "uint256"
-        }
-      ],
-      "name": "ERC2981InvalidDefaultRoyalty",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "receiver",
-          "type": "address"
-        }
-      ],
-      "name": "ERC2981InvalidDefaultRoyaltyReceiver",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "tokenId",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "numerator",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "denominator",
-          "type": "uint256"
-        }
-      ],
-      "name": "ERC2981InvalidTokenRoyalty",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "tokenId",
-          "type": "uint256"
-        },
-        {
-          "internalType": "address",
-          "name": "receiver",
-          "type": "address"
-        }
-      ],
-      "name": "ERC2981InvalidTokenRoyaltyReceiver",
-      "type": "error"
     },
     {
       "inputs": [
@@ -5197,48 +4414,6 @@
       ],
       "name": "RoleRevoked",
       "type": "event"
-    },
-    {
-      "inputs": [],
-      "name": "royaltyFee",
-      "outputs": [
-        {
-          "internalType": "uint16",
-          "name": "",
-          "type": "uint16"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "tokenId",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "salePrice",
-          "type": "uint256"
-        }
-      ],
-      "name": "royaltyInfo",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
     }
   ]
 }

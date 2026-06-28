@@ -1,13 +1,22 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.25; 
+pragma solidity 0.8.35; 
 
-// Parent classes
-import { Diamond } from '../diamondStandard/Diamond.sol';
+import { SolidstateDiamondProxy } from "@solidstate/contracts/proxy/diamond/SolidstateDiamondProxy.sol";
 import { AccessControlEnumerable } from "../common/DiamondStorage/AccessControlEnumerable.sol";
+import { Context } from "@openzeppelin/contracts/utils/Context.sol";
+import { _Context } from "@solidstate/contracts/meta/_Context.sol";
+import { _Ownable } from "@solidstate/contracts/access/ownable/_Ownable.sol";
 
-/// @title 	Facet source
-/// @notice Main hub for the ERC721 facets
-/// @dev 	To be used alongside the Factory
-contract FacetSource is Diamond, AccessControlEnumerable {
-	constructor(address _diamondCut) Diamond(msg.sender, _diamondCut) {}
+contract FacetSource is SolidstateDiamondProxy, AccessControlEnumerable, _Ownable {
+    constructor() {
+        _setOwner(msg.sender);
+    }
+
+    function _msgSender() internal view virtual override(Context, _Context) returns (address) {
+        return msg.sender;
+    }
+
+    function _msgData() internal view virtual override(Context, _Context) returns (bytes calldata) {
+        return msg.data;
+    }
 }

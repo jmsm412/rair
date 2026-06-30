@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.25;
+pragma solidity 0.8.35;
 
 import { EnumerableSet } from "@openzeppelin/contracts/utils/structs/EnumerableSet.sol";
 
 library AccessControlEnumerableStorage {
     bytes32 internal constant STORAGE_SLOT =
-        keccak256('rair.contracts.storage.AccessControlEnumerable');
+        keccak256("rair.contracts.storage.AccessControlEnumerable");
 
     struct RoleData {
         mapping(address => bool) members;

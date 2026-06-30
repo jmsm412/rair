@@ -10,10 +10,6 @@ import { RAIR721Storage } from "./AppStorage.sol";
 import { ERC721AccessControlRoles } from "./AccessControlRoles.sol";
 import { AccessControlEnumerable } from "../../common/DiamondStorage/AccessControlEnumerable.sol";
 
-interface Factory {
-    function getFacetSource() external view returns (address);
-}
-
 interface IDiamondReadable {
     function facetAddress(bytes4 selector) external view returns (address);
 }
@@ -24,25 +20,28 @@ contract RAIR721_Diamond is ERC721AccessControlRoles, ERC165, AccessControlEnume
         string memory name_,
         string memory symbol_,
         address creatorAddress_,
-        uint16 creatorRoyalty_
+        address facetSource_
     ) {
         ERC721Storage.ref().name = name_;
         ERC721Storage.ref().symbol = symbol_;
 
         RAIR721Storage.Layout storage store = RAIR721Storage.layout();
-        store.requiresTrader = true;
-        store.factoryAddress = msg.sender;
-        store.royaltyFee = creatorRoyalty_;
+        store.facetSource = facetSource_;
 
+        _setRoleAdmin(DEFAULT_ADMIN_ROLE, DEFAULT_ADMIN_ROLE);
+        _setRoleAdmin(CREATOR, DEFAULT_ADMIN_ROLE);
         _setRoleAdmin(MINTER, CREATOR);
         _setRoleAdmin(TRADER, CREATOR);
+
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _grantRole(DEFAULT_ADMIN_ROLE, creatorAddress_);
         _grantRole(CREATOR, creatorAddress_);
         _grantRole(MINTER, creatorAddress_);
         _grantRole(TRADER, creatorAddress_);
     }
 
-    function getFactoryAddress() public view returns (address factoryAddress) {
-        factoryAddress = RAIR721Storage.layout().factoryAddress;
+    function getFacetSourceAddress() public view returns (address facetSource) {
+        facetSource = RAIR721Storage.layout().facetSource;
     }
 
     function contractURI() public view returns (string memory contractMetadataURI) {
@@ -58,8 +57,7 @@ contract RAIR721_Diamond is ERC721AccessControlRoles, ERC165, AccessControlEnume
     }
 
     fallback() external {
-        address factoryAddr = RAIR721Storage.layout().factoryAddress;
-        address facetSource = Factory(factoryAddr).getFacetSource();
+        address facetSource = RAIR721Storage.layout().facetSource;
         address facet = IDiamondReadable(facetSource).facetAddress(msg.sig);
         
         assembly {

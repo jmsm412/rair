@@ -1,30 +1,30 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.25;
+pragma solidity 0.8.35;
 
 library ResaleStorage {
     bytes32 internal constant STORAGE_SLOT =
-        keccak256('rair.contracts.storage.resaleOffers');
+        keccak256("rair.contracts.storage.resaleOffers");
 
-    struct feeSplits {
+    struct FeeSplits {
         address recipient;
-        uint percentage;
+        uint256 percentage;
     }
 
-    struct resaleOffer {
+    struct ResaleOffer {
         address erc721;
         address buyer;
         address seller;
-        uint token;
-        uint tokenPrice;
+        uint256 token;
+        uint256 tokenPrice;
         address nodeAddress;
     }
 
     struct Layout {
-        mapping(address => feeSplits[]) royaltySplits;
+        mapping(address => FeeSplits[]) royaltySplits;
         mapping(address => address) contractOwner;
-        uint purchaseGracePeriod;
-        uint decimalPow;
-        resaleOffer[] resaleOffers;
+        uint256 purchaseGracePeriod;
+        uint256 decimalPow;
+        ResaleOffer[] resaleOffers;
     }
 
     function layout() internal pure returns (Layout storage l) {

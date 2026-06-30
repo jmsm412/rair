@@ -25,6 +25,7 @@ library RAIR721Storage {
     struct Layout {
         string baseURI;
         address factoryAddress;
+        address facetSource;
         uint16 royaltyFee;
         Product[] products;
         Range[] ranges;
@@ -40,7 +41,6 @@ library RAIR721Storage {
         mapping(uint256 => bool) _minted;
         mapping(uint256 => string) rangeURI;
         mapping(uint256 => bool) appendTokenIndexToRangeURI;
-        string _metadataExtension;
         bool requiresTrader;
     }
 
